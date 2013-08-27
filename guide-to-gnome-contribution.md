@@ -87,9 +87,7 @@ Problems in software arise because of the way source code of a project is writte
 1. Make the change (that is, write the solution) in the source code.
 1. Submit your changes as a file. These changes that you just made, are your solution to the problem that you see reported on Bugzilla. This solution is called a "Patch" file.
 
-__ Terminal: to execute commands__
-
-Git is a command line software, which means you interact with Git using a terminal. In GNOME, to issue commands in the command line, use the application "Terminal". 
+__Terminal: to execute commands__
 
 The blinking cursor in the terminal is called 'prompt'. A blinking cursor indicates that terminal is ready to execute your commands. After typing your command, you press "Enter" key. When you open Terminal for the very first time, it's default location will be set to your HOME folder. So, all the following commands listed from here on in this article will create content in your HOME folder. For now, there are only two commands you will need to know to naviagte between directories using a Terminal.
 
@@ -101,7 +99,13 @@ The blinking cursor in the terminal is called 'prompt'. A blinking cursor indica
 __Tip__: To know which directory your terminal is currently at, type `pwd`.
 'pwd' is short for 'present' working directory'. You should see an output like `/home/sindhus/gnome-dictionary`.
 
-'cd` is a linux commands. Teaching elaborately how to use linux command is beyond the scope of this document. To learn more on how to navigate back and forth between directories, please see [Using The Terminal](https://help.ubuntu.com/community/UsingTheTerminal).
+Teaching elaborately how to use linux command is beyond the scope of this document. To learn more on how to navigate back and forth between directories, please see [Using The Terminal](https://help.ubuntu.com/community/UsingTheTerminal).
+
+__Why should I learn how to use the Terminal?__
+
+Git is a command line software, which means you interact with Git using a terminal. In GNOME, to issue commands in the command line, use the application "Terminal". Terminal commands remain the same regardless of which Gnu/Linux distribution you use (whether Ubuntu, Fedora or something else).
+
+Now here's the part that separates git commands and Gnu/Linux commands: Using the terminal, in a directory that holds source code, you will need to use git commands to tell git to perform some operations _AND_ to navigate between multiple directories in the terminal, you will need to use Gnu/Linux terminal commands.
 
 __How do I install Git?__
 

@@ -6,17 +6,16 @@ Category: Articles
 * Are you interested in contributing code to GNOME?
 * Are you interested in writing Documentation for GNOME?
 
-This page discusses the options available to set up a development environment to contribute to GNOME, that is, the tools you need to setup, the information you need to keep track of and so on.
-
-These are the small requirements with regards to familiarity with technical terms while reading this document:
+This page discusses the options available to set up a development environment to contribute to GNOME, that is, the tools you need to setup, the information you need to keep track of and so on. These are the small requirements with regards to familiarity with technical terms while reading this document:
 
 1. Do you have Ubuntu GNOME installed?
-Please note this guide assumes you have [Ubuntu GNOME](http://ubuntugnome.org/) installed on your computer. This distribution is easy to set up, manage and is quite popular among computer literate masses. Installation procedure itself is not covered under this guide as it can make the guide that much longer to read. 
+
+Please note this guide assumes you have [Ubuntu GNOME](http://ubuntugnome.org/) installed on your computer. This distribution is easy to set up, manage and is quite popular among computer literate masses. Installation procedure itself is not covered under this guide as it can make the guide that much longer to read.
 
 While all commands mentioned in this guide should work on most other Gnu/Linux distributions as well, however you _may_ encounter issues specific to that particular distribution. Predicting all of them are of course, impossible and beyong the scope of this document. However, I can point you to the general direction - to resolve issues, you might want to seek help in communication mediums (such as mailing lists, forums, Question and Answer websites) meant for that distribution. For example, you are reading this guide but using Fedora _and_ have an issue, try approaching [Fedora Forum](http://www.fedoraforum.org/). Similarly for other distributions.
 
 1. Do you know what a terminal is? Do you know the meaning of "execute"?
-1. Are you familiar with the terms 'binaries/executables', 'library/libraries'?
+1. Are you familiar with the terms 'binaries/executables'?
 1. Do you know which part of a terminal is called prompt?
 
 If yes, then go forth!
@@ -53,9 +52,9 @@ __Where does one look for problems?__
 
 [Browse GNOME Bugzilla](https://bugzilla.gnome.org/browse.cgi). The website is fairly intuitive and you should be able to navigate different software projects by selecting your interested projects from the dropdown menu and then clicking on "Show product". 
 
-Don't know what projects you would be interested in? In your GNOME desktop, ask yourself which is your favorite application in GNOME? Is it the Dictionary? Is it Terminal? is it Rhythmbox that plays you music? Is it GNOME Desktop itself? Once you decide on a application, search for the name in the dropdown menu and explore the project's bug reports!
+__Tip__: Don't know what projects you would be interested in? In your GNOME desktop, ask yourself which is your favorite application in GNOME? Is it the Dictionary? Is it Terminal? is it Rhythmbox that plays you music? Is it GNOME Desktop itself? Once you decide on a application, search for the name in the dropdown menu and explore the project's bug reports!
 
-__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on), Ecllipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
+__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on) and also Ecllipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
 
 __How do I find bugs that are easy to solve?__
 
@@ -71,7 +70,7 @@ Now that you know what problems/bugs are, you might be interested in giving solu
 
 __How can I know more features and explore Bugzilla?__
 
-If you want a short guide, I have written a blog post about the different ways you can subscribe to relevant bug mail, see [hunt for bugs as a newcomer](http://sindhus.bitbucket.org/bugzilla-tricks-for-bug-hungry-newbies.html). For in depth knowledge, Andre Klapper, has written [a series of posts explaining hidden useful features of Bugzilla](http://blogs.gnome.org/aklapper/category/computer/bugzilla/). 
+If you want a short guide, see [Bugzilla Tricks For Bug Hungry Newbies](http://sindhus.bitbucket.org/bugzilla-tricks-for-bug-hungry-newbies.html). For in depth knowledge, Andre Klapper, has written [a series of posts explaining hidden useful features of Bugzilla](http://blogs.gnome.org/aklapper/category/computer/bugzilla/).
 
 ## Your interaction with the source code ##
 
@@ -81,7 +80,7 @@ Your first step in contributing to GNOME starts with you downloading the source 
 
 __Why should I get source code?__
 
-Problems in software arise because of the way source code of a project is written. It may be faulty, it may be inconsistent within different parts of the software itself, it may not accomodate features required by users and so on. These problems are bugs and bugs need to be resolved with solutions. So to provide solutions to a bug of a project, you have to follow this flow:
+Problems in software arise because of the way source code of a project is written. It may be faulty, it may be inconsistent within parts of the software itself (such as User help instructions do not match with buttons available in the program), it may not accomodate features required by users and so on. These problems are bugs and bugs need to be resolved with solutions. So to provide solutions to a bug of a project, you have to follow this flow:
 
 1. Get the source code of the project.
 1. Locate the faulty lines of code (the lines that are causing the problem) OR where lines of code are missing.
@@ -242,9 +241,9 @@ This method is suitable if you..
 
 AND
 
-* Do not have the time to be physically present in front of a computer, when it is compiling code from source.
- 
-As development libraries and products are available as executables as well, one can set up a Gnu/Linux distribution with repositories that have daily updated development builds of projects. For example, Fedora provides development builds in it's _Rawhide_ repositories.
+* Do not have the time to be physically present in front of a computer, when code is being compiled from source.
+
+As development libraries and products are available as executables as well, one can set up a Gnu/Linux distribution with repositories that have daily updated development builds of projects. For example, Fedora provides development builds in it's [Rawhide](https://fedoraproject.org/wiki/Releases/Rawhide?rd=Rawhide) repositories.
 
 __Method 2: Use virtualization to set-up a development environment in your daily-use computer__
 
@@ -252,22 +251,22 @@ __Method 2: Use virtualization to set-up a development environment in your daily
 * Are you short on time to set up a new operating system?
 * Are you afraid to dual boot? (perhaps, those having UEFI, especially on Macbooks)
 
-If yes to any of the above, virtualization could be the answer. For example, you could use OS X along with VirtualBox and Vagrant software to quickly set up Gnu/Linux and use it for development. Vagrant has a large user base and hence you will be able to find "images" of most popular Gnu/Linux distributions for quick usage.
+If yes to any of the above, virtualization could be the answer. For example, you could use OS X along with [VirtualBox](https://help.ubuntu.com/community/VirtualBox) and [Vagrant](http://www.vagrantup.com/) software to quickly set up Gnu/Linux and use it for development. Vagrant has a large user base and hence you will be able to find virtual machine images called ["boxes" for most popular Gnu/Linux distributions](http://www.vagrantbox.es/) for quick usage.
 
 Usage of virtualization software have the advantage that the environment is transferrable and re-usable on other computers as well. However, such virtualized development environments are not suitable for those...
 
 1. With computers with small processing power.
 1. Who work with GUI applications, such as the GNOME desktop itself.
 
-Using virtualized environments means that your computer is now allocating your computer's hardware resources and processing power between two operating systems. That means, your host operating system (such as OS X from previous example) could run slower when you are using the guest operating system (such as Gnu/Linux from VirtualBox).
+Visually, you are running a completely different operating system on a existing operating system. Get the picture? Ubuntu running like a program on OS X. This means that your computer is now allocating your computer's hardware resources and processing power between two operating systems. Your host operating system (such as OS X from above example) could run slower when you are using the guest operating system (such as Ubuntu from VirtualBox).
 
 __Method 3: Use JHbuild and keep an isolated development environment in your daily-use computer__
 
-This method is suitable for those who would like to keep their development environment and regular use operating system on a single computer. JHbuild is essentially a couple of scripts
+This method is suitable for those who would like to keep their development environment and regular use operating system on a single computer. JHbuild is essentially a few build scripts that bring source code and compile them in an orderly fashion.
 
 ## JHbuild & Set-up ##
 
-JHbuild is a software that compiles GNOME modules (libraries and programs) from source. It makes compiling applications like Gnote, Tomboy, Dictionary, Rhythmbox, Terminal among many others, much easier. Applications are referred to as "modules" within jhbuild. 
+JHbuild is a software that compiles GNOME modules (a single term to include both libraries and programs) from source. It makes compiling applications like Gnote, Tomboy, Dictionary, Rhythmbox, Terminal among many others, much easier. GNOME applications are also referred to as "modules" within jhbuild.
 
 To setup JHbuild on your computer, type and run the following commands:
 
@@ -290,9 +289,9 @@ Now, we can move on preparing jhbuild to compile from source.
 
 Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location. 
 
-Another purpose of this section is that, some GNOME module would need compilers & build tools and specific libraries called "development libraries" for a project. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
+Another purpose of this section is that, some GNOME module would need compilers & build tools. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
 
-To understand "development libraries", consider the FLOSS alternative for .NET framework - Mono. To compile, mono we would require "libmono-dev". The prefix "lib"  indicates that it is a library and the suffix "-dev" indicates it this software package contains headers. Headers are necessary to compile software. From your C programming classes, you would know that *.h are header files required to access some functions. Libraries are collection of such functions. 
+JHbuild also requires development libraries to compile certain software from source. To understand the term "development libraries", consider the FLOSS alternative for .NET framework - [Mono](http://mono-project.com). To compile, mono we would require "libmono-dev". The prefix "lib" indicates that it is a library and the suffix "-dev" indicates it this software package contains headers. Headers are necessary to compile software. If you have taken C programming course, you would know that *.h are header files required to access some functions. Libraries are collection of such functions.
 
 __To prepare JHbuild__:
 
@@ -310,7 +309,7 @@ The last command is builds GTK+ library. Since, GTK+ is the most basic and thoro
 
 ## Configuring your JHbuild ##
 
-The configuration for JHbuild exists in ~/.jhbuildrc. You can configure this according to your needs. For example, compiling Webkit library is time consuming and it is readily available as a binary in most package repositories. Hence in the .jhbuildrc file, we can add it to a section called "skip" and thus telling jhbuild to _skip_ building Webkit from source.
+The configuration for JHbuild exists in ~/.jhbuildrc. You can configure this according to your needs. For example, compiling the Webkit library is time consuming and it is readily available as a binary in most package repositories. Hence in the .jhbuildrc file, we can add it to a section called "skip" and thus telling jhbuild to _skip_ building Webkit from source.
 
 My .jhbuildrc looks like this:
 
@@ -350,15 +349,6 @@ modules = ['gnome-shell',
            'gnome-icon-theme-extras',
            'gnome-icon-theme-symbolic'
 ]
-
-#For later use
-#emerillon
-#gnome-sudoku
-#gnome-getting-started-docs
-#gnome-tweak-tool
-#seahorse
-#ostree
-#totem
 
 skip = [
   'iso-codes',
@@ -423,10 +413,10 @@ Here is a list of a few basic and useful commands of jhbuild to be familiar with
 * To build a module including it's dependencies: `jhbuild build <module-name>`.
 * To build a module with existing source code (that is, _not_ downloading .fresh changes from git.gnome.org): `jhbuild build -n <module-name>`.
 * To build a module without building it's dependencies: `jhbuild buildone <module-name>`.
+* To enter into JHbuild shell: `jhbuild shell`.
+* To compile a GNOME module: `jhbuild make`
 * To run a sucessfully built module: `jhbuild run <module-name`.
 * To see where a binary of a jhbuild module is located: `jhbuild run which <module-name`.
-* To compile a GNOME module: `jhbuild make`
-* To enter into JHbuild shell: `jhbuild shell`.
 
 ## Compile a GNOME from source ##
 
@@ -461,6 +451,32 @@ Do you have the modules already compiled?
 1. If yes, you may build your module with `jhbuild buildone gnome-dictionary`.
 1. If no, then build your module with `jhbuild build gnome-dictionary`.
 
+__How to compile a GNOME module after making changes to the source code?__
+
+The configuration _checkoutroot_ in your ~/.jhbuildrc will set the location where jhbuild will download source code for a module. The same thing as a `git clone <module-name>`. 
+
+```
+# what directory should the source be checked out to?
+checkoutroot = os.path.expanduser('~/checkout/gnome')
+```
+If you have git cloned the same project else where and made your changes there, how should jhbuild know that it should compile the git repository where you made changes and not the git repository where it simply downloaded the source code in order to build the module?
+
+_Consider this scenario_:
+
+1. `jhbuild build gnome-dictionary`
+JHbuild will go fetch source code for dependencies and compile gnome-dictionary. The source code it downloads will be put into `~/checkout/gnome`.
+1. Sometime later, I will `git clone git://git.gnome.org/gnome-dictionary` in my HOME directory. I make some changes to the code.
+1. I run `jhbuild buildone gnome-dictionary`. 
+
+JHbuild will pick up gnome-dictionary source from `~/checkout/gnome/gnome-dictionary` and not changes in ~/gnome-dictionary.
+
+To avoid this confusion, the simplest approach is to make changes in the git repository available at `~/checkout/gnome`. Otherwise, do remember that you have two places on your computer where you have a copy of the same git repository. One with changes you made locally and one without!
+
+To tell JHbuild to build in any git repository:
+
+1. `jhbuild shell`
+1. `jhbuild make`
+
 ## Sign up to mailing lists ##
 
 GNOME Mailing lists are hubs of information pertaining to any project. In addition to IRC, to keep abreast of the latest news with the projects you are interested in, it is recommended you be subscribed to the following lists from the many available here: 
@@ -475,13 +491,13 @@ __How will mailing list be useful to me?__
 
 Mailing lists can be used to:
 
-1. Discuss programming problems. Example:
-1. Asking for reviews for patches filed (when nobody has reviewed your patch even after a long time). Example:
+1. Seek advice and discuss on the best practises you can adopt when it comes to using code/syntax and generally towards contributions.
+1. Asking for reviews for patches filed (when nobody has reviewed your patch even after a long time). [See example](https://mail.gnome.org/archives/gnome-doc-list/2013-August/msg00016.html).
 1. Discuss a new feature you have in mind for the project?
 
-__Caution!__: Please don't post topics outside of a mailing lists's concern. For example: Don't post on desktop-devel-list asking for help on how to use GNOME, post it on gnome-love. gnome-love list helps newcomers on a wide range of topics. Posting on a mailing list means that _all_ people who are subscribed to a mailing list will get a copy of your e-mail and if it's not relevant to the list's topic, it will be ignored and you will not receive help you require.
+Remember that before you approach a mailing list, you must do your research. Mailing list is not an alternative to Google search.
 
-__Caution__: Please remember that before you approach a mailing list, you must do your research. Mailing list is not an alternative to Google search. Mailing list must be your last resort to seeking help.
+__Caution!__: Please don't post topics outside of a mailing lists's concern. For example: Don't post on desktop-devel-list asking for help on how to use GNOME, post it on gnome-love. gnome-love list helps newcomers on a wide range of topics. Posting on a mailing list means that _all_ people who are subscribed to a mailing list will get a copy of your e-mail and if it's not relevant to the list's topic, it will be ignored and you will not receive help you require.
 
 __Tip__: Use a simple password that is different from your e-mail/other important accounts' password.
 
@@ -513,11 +529,9 @@ You can learn Mallard in the following ways:'
 
 __Teaching yourself Mallard__:
 
-The best way to teach yourself any new language is to build something with it. To teach yourself mallard, try writing a page using mallard about topics that interest you. For example: Yourself!, knowledge you have acquired in Open Source etc. 
+The best way to teach yourself any new language is to build something with it. To teach yourself mallard, try writing a page using mallard about topics that interest you. For example: Yourself!, knowledge you have acquired in Open Source etc. Thus when you are writing prose, you will look up tags to use, thus automatically referring to projectmallard.org. Writing something of interest you will allow you to learn without having to memorise.
 
-Examples:
-
- * http://sindhus.bitbucket.org/docs/gnome-visa/index.html - A few Mallard based help pages about Visa application procedure in India. 
+For example [Visa Help](http://sindhus.bitbucket.org/docs/gnome-visa/index.html) - A few Mallard based help pages about Visa application procedure in India.
 
 ## Chat on IRC! ##
 

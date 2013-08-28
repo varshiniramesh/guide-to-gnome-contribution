@@ -6,7 +6,7 @@ Category: Articles
 * Are you interested in contributing code to GNOME?
 * Are you interested in writing Documentation for GNOME?
 
-This page discusses the options available to set up a development environment to contribute to GNOME, that is, the tools you need to setup, the information you need to keep track of and so on. These are the small requirements with regards to familiarity with technical terms while reading this document:
+This page discusses the big picture - all that you need to know right from taking baby steps to walking to sprinting to running full speed ahead! These are the small requirements with regards to familiarity with technical terms while reading this document:
 
 1. Do you have Ubuntu GNOME installed?
 
@@ -23,38 +23,71 @@ If no, then please seek help with these basic requisites. Once you have installe
 
 ## Table Of Contents ##
 
+1. Technical Terms
+1. How to start contributing to GNOME?
 1. Explore Bugzilla.
 1. Your interaction with the source code.
 1. Why should I set up a development environment?
 1. JHbuild & Setup.
-1. Preparing JHbuild to compile modules from source.
-1. Configuring your JHbuild.
-1. JHbuild comamnds.
-1. Compile a GNOME module from source.
 1. Sign up to mailing lists.
-1. Documentation specific resources.
+1. Documentation & YOU.
 1. Learn Mallard.
 1. Chat on IRC.
+1. Make this document better!
 
-The question "How to contribute to GNOME"? has a simple answer. "See a bug? Saw a bug? Need a feature? Upload a patch!". You can see problems (that is, "see bugs") when you use GNOME for your daily computing needs such as looking up a definition in Dictionary, listening to music in Rhythmbox, taking notes in Tomboy, Bijiben or Gnote. [Dictionary](https://wiki.gnome.org/Dictionary), [Rhythmbox](https://wiki.gnome.org/Rhythmbox), [Tomboy](https://wiki.gnome.org/Apps/Tomboy), [Bijiben](https://wiki.gnome.org/Apps/Bijiben) and [Gnote](https://wiki.gnome.org/Gnote) are examples of some GNOME applications.
+## Technical Terms ##
 
-You can also search for problems that other people have reported about ("Saw a bug") by exploring a website called "Bugzilla" for GNOME and for when you need a new feature in GNOME - all of these have the same solution - File a patch!
+These are the terms used in this document along with it's equivalents used interchangably.
 
-We will get to the meaning of "File a patch" in a few paragraphs.
+| Term                     | May also be referred to as:    |
+|:-------------------------|:-------------------------------|
+| Program                  | Application, Executale, Binary |
+| Software                 | Project, Module, Product       |
+| Graphical User Interface | User Interface (UI)            |
+
+## How to start contributing to GNOME? ##
+
+You will require these:
+
+1. A bug in software.
+1. Source code of the software.
+1. Git to download source code on to your computer.
+1. Your willingness to learn how to fix a bug :-)
+1. Knowledge of basic git commands to save the changes you made in the source code.
+1. Git commands to send the changes made to source code.
+1. Internet connection to connect to a website called bugzilla.gnome.org and upload the changes you made.
+
+__What are bugs?__
+
+Bugs are problems encountered when you use any software. Problems in software arise because of the way source code of a project is written. The source code may be faulty or inconsistent within parts of the software itself (Example: When the user manual does not match with user interface of the software) or the software does not have features which would be useful and so on. These problems are bugs and bugs need to be resolved with solutions.
+
+__Where can I see bugs?__
+
+When you use GNOME for your daily computing needs such as looking up a definition in Dictionary, listening to music in Rhythmbox, taking notes in Tomboy, Bijiben or Gnote, you will be able see problems in these software. They can be as minor as a button being too small to major as the software closing abruptly or performing sluggishly.
+
+[Dictionary](https://wiki.gnome.org/Dictionary), [Rhythmbox](https://wiki.gnome.org/Rhythmbox), [Tomboy](https://wiki.gnome.org/Apps/Tomboy), [Bijiben](https://wiki.gnome.org/Apps/Bijiben) and [Gnote](https://wiki.gnome.org/Gnote) are examples of some GNOME applications.
+
+__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on) and also Ecllipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
+
+__Where will I find bugs?__
+
+Go on, read the next section!
 
 ## Explore Bugzilla ##
 
-Bugs are problems encountered when you use any software. Bug reports are pages where such problems are described and filed on a accessible system such as a webpage. Bugzilla is a software in the form of a website, that allows you to report, track and manage bugs. [Visit GNOME Bugzilla](http://bugzilla.gnome.org).
+If you don't find a bug yourself, don't worry, there are plenty of bugs filed by others. There are webpages where problems of a software are described and filed, these are called "Bug Reports". As number of bug reports grow, managing all the bugs being filed, resolved and else becomes a task. Hence, there is a system in place called Bugzilla. It is a software in the form of a website, that allows you to report, track and manage bugs. [Visit GNOME Bugzilla](http://bugzilla.gnome.org).
 
-You will have to register yourself an account on Bugzilla with an e-mail address that would want to receive bug mail (notifications of bugs being filed, being commented on, closed and/or resolved and so on). When you login with an account, you will be able to comment on bugs filed, ask for help on specific bug pages and track other users' bugzilla activity.
+You will need to register yourself on GNOME Bugzilla. You can always browse for bugs without logging in but once you login you will be able to do the following:
 
-__Where does one look for problems?__
+1. Comment on bug reports asking for help on how to resolve them, asking for review on solutions (called "Patches") you have submitted and so on.
+1. Receive notifications if specific or group of bugs have been resolved.
+1. Follow other user's bugzilla activity.
 
-[Browse GNOME Bugzilla](https://bugzilla.gnome.org/browse.cgi). The website is fairly intuitive and you should be able to navigate different software projects by selecting your interested projects from the dropdown menu and then clicking on "Show product".
+__Where should I start looking for bugs?__
+
+[Browse GNOME Bugzilla](https://bugzilla.gnome.org/browse.cgi). Each software project has it's own page on Bugzilla. You can view a project's page by selecting it's name from the dropdown menu and then clicking on "Show product".
 
 __Tip__: Don't know what projects you would be interested in? In your GNOME desktop, ask yourself which is your favorite application in GNOME? Is it the Dictionary? Is it Terminal? is it Rhythmbox that plays you music? Is it GNOME Desktop itself? Once you decide on a application, search for the name in the dropdown menu and explore the project's bug reports!
-
-__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on) and also Ecllipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
 
 __How do I find bugs that are easy to solve?__
 
@@ -64,32 +97,40 @@ _Example_:
 
 <a href="/static/images/gnome_love_bugs_dictionary.png"><img src="/static/images/gnome_love_bugs_dictionary.png" style="width:500px"></a>
 
-__ How do I give my solutions to these problems/bugs?__
-
-Now that you know what problems/bugs are, you might be interested in giving solutions to them, that is to say "fixing a bug". The solutions should be provided by you in a file. This file is called a "patch". This is what we mean when we say "Upload a patch", that is give solution to a problem!
-
 __How can I know more features and explore Bugzilla?__
 
 If you want a short guide, see [Bugzilla Tricks For Bug Hungry Newbies](http://sindhus.bitbucket.org/bugzilla-tricks-for-bug-hungry-newbies.html). For in depth knowledge, Andre Klapper, has written [a series of posts explaining hidden useful features of Bugzilla](http://blogs.gnome.org/aklapper/category/computer/bugzilla/).
 
+__What do you mean by fixing a bug?__
+
+Now that you know what problems/bugs are, to contribute to GNOME, you will need to give solutions to them, that is to say "you want to fix a bug". You should know that we cannot make changes on running programs. We have to edit the source code to make the changes and compile it to get new programs. This new program is an improved version which does not have problems unlike the old program. Read the next section on how to download source code for a project!
+
 ## Your interaction with the source code ##
 
-Free and Open source software  (FLOSS) is a collaborative effort from people spread throughout the world. In order to keep track of changes from these varied people, a revision control system is in place, that is to say it's important to know among ourselves that who is making what changes to the source code of a project. "Revisions" refers to changes in the source code. GNOME uses Git  to track revisions and conrol who has access to make such revisions.
+The workflow in fixing a bug is as follows:
 
-Your first step in contributing to GNOME starts with you downloading the source code for a project.
+1. Download the source code of the project.
+1. Locate the lines of code that are causing the problem OR where lines of code are missing.
+1. Make the change (that is, write the solution).
+1. Submit your changes in a file.
 
-__Why should I get source code?__
+__Now consider the following reasons__:
 
-Problems in software arise because of the way source code of a project is written. It may be faulty, it may be inconsistent within parts of the software itself (such as User help instructions do not match with buttons available in the program), it may not accomodate features required by users and so on. These problems are bugs and bugs need to be resolved with solutions. So to provide solutions to a bug of a project, you have to follow this flow:
+1. Free and Open source software (FLOSS) is a collaborative effort from people spread throughout the world. There are many people like you who make changes to source code. When multiple change the same files, there can be confusion as to who changed what. What if those changes conflict each other? What if some changes introduces a bug? What if some change makes the software unusable? 
+ 
+1. How do we submit changes to software in such a way that other people will be able to test it? What if person A submits his change in a text file (*.txt) and person B submits his change in another format? What if person C modifies the same files as person B and both of them submit their changes together?
 
-1. Get the source code of the project.
-1. Locate the faulty lines of code (the lines that are causing the problem) OR where lines of code are missing.
-1. Make the change (that is, write the solution) in the source code.
-1. Submit your changes as a file. These changes that you just made, are your solution to the problem that you see reported on Bugzilla. This solution is called a "Patch" file.
+In order to keep track of changes, we need a system in place. Changes are also called "Revisions". Revision control software can track changes. Git is one such revision control software. GNOME uses Git. Git allows you to submit changes made to source code in a convinient format called "Patch". Thus giving all of us a common format to test changes made by others. A patch file will tell Git what changes have been made, where and that git should apply those changes automatically!
+
+Great, __now we know why we need Git!__ Before we proceed to learn how to use Git, we should know a few terminal commands.
+
+__Why should I learn how to use the Terminal?__
+
+Git is a command line software, which means you _interact_ with Git using a terminal. In GNOME, to issue commands in the command line, use the application "Terminal".
 
 __Terminal: to execute commands__
 
-The blinking cursor in the terminal is called 'prompt'. A blinking cursor indicates that terminal is ready to execute your commands. After typing your command, you press "Enter" key. When you open Terminal for the very first time, it's default location will be set to your HOME folder. So, all the following commands listed from here on in this article will create content in your HOME folder. For now, there are only two commands you will need to know to naviagte between directories using a Terminal.
+The blinking cursor in the terminal is called 'prompt'. A blinking cursor indicates that terminal is ready to execute your commands. After typing your command, you press "Enter" key. When you open Terminal for the very first time, the default location will be set to your HOME folder. So, all the following commands listed from here on in this article will create content in your HOME folder. For now, there are only two commands you will need to know to naviagte between directories using a Terminal.
 
 1. `cd some-directory-name`
 `cd` means 'change directory' and _some-directory-name_ can be replaced with the name of the directory you wish to navigate to.
@@ -99,18 +140,12 @@ The blinking cursor in the terminal is called 'prompt'. A blinking cursor indica
 __Tip__: To know which directory your terminal is currently at, type `pwd`.
 'pwd' is short for 'present' working directory'. You should see an output like `/home/sindhus/gnome-dictionary`.
 
-Teaching elaborately how to use linux command is beyond the scope of this document. To learn more on how to navigate back and forth between directories, please see [Using The Terminal](https://help.ubuntu.com/community/UsingTheTerminal).
-
-__Why should I learn how to use the Terminal?__
-
-Git is a command line software, which means you interact with Git using a terminal. In GNOME, to issue commands in the command line, use the application "Terminal". Terminal commands remain the same regardless of which Gnu/Linux distribution you use (whether Ubuntu, Fedora or something else).
-
-Now here's the part that separates git commands and Gnu/Linux commands: Using the terminal, in a directory that holds source code, you will need to use git commands to tell git to perform some operations _AND_ to navigate between multiple directories in the terminal, you will need to use Gnu/Linux terminal commands.
+Teaching how to use all linux commands is beyond the scope of this document. To learn more on how to navigate back and forth between directories, please see [Using The Terminal](https://help.ubuntu.com/community/UsingTheTerminal).
 
 __How do I install Git?__
 
 1. Make sure you are connected to the Internet.
-1. Open Terminal.
+1. Open a Terminal.
 1. Type `sudo apt-get install git-core`.
 
 The terminal output for the installation would look like this:
@@ -135,12 +170,34 @@ Setting up git-core (1:1.8.1.2-1) ...
 
 __How do I know I have git installed on my computer?__
 
-You can check if you have git installed on your computer by following these commands:
+You can check if you have git installed on your computer by running these commands:
 
 1. Type `mkdir test` and press Enter. This command will create a new directory called 'test'.
 1. Type `cd test` and press Enter. This means, your terminal is now _inside_ the 'test' directory.
 1. Type `git init` and press Enter. This command will initialize git to _watch_ 'test' directory for files added, removed and revisions made to 'test' directory. If this command fails, then you do not have git installed on your computer. If this command succeeds, you should see an output like this: `Initialized empty Git repository in /home/sindhus/test/.git/`. Instead of
 sindhus' which is my username, the address will have your username.
+
+__Git commands Vs Terminal commands__
+
+Here is the differennce between Git commands and terminal commands:
+
+* Terminal commands are used simply to navigate between directories on a Gnu/Linux distribution. You can use them in the terminal regardless of whether you have Git installed on your computer or not.
+* Git commands are to tell git what to do with changes made to files in a particular directory. You can only use git commands within a directory that is a git repository. To know if the directory is a git repository or not, check with `ls .git`. If you see an output like this:
+
+```
+sindhus@leh:~/checkout/gnome/gnome-dictionary$ ls .git
+branches        config       FETCH_HEAD  hooks  info  objects    packed-refs
+COMMIT_EDITMSG  description  HEAD        index  logs  ORIG_HEAD  refs
+```
+
+You are looking at a git repository. If the command returns an output like this:
+
+```
+sindhus@leh:~$ ls .git
+ls: cannot access .git: No such file or directory
+```
+
+You are _not_ in a directory that is tracked by git.
 
 __How do I download source of a GNOME project?__
 
@@ -161,6 +218,7 @@ remote: Total 3650 (delta 2656), reused 2622 (delta 1916)
 Receiving objects: 100% (3650/3650), 4.77 MiB | 298 KiB/s, done.
 Resolving deltas: 100% (2656/2656), done.
 ```
+
 You can view the files of the source code by navigating into the directory 'gnome-dictionary" (hint: use `cd`) and then`ls`. You should see an output like this:
 
 ```
@@ -173,14 +231,26 @@ COPYING       docs          Makefile.am            src
 
 __How to make changes to source code?__
 
+Each bug has a different solution. So there is no generic answer or solution to any of them. Though, bugs _can_ be classified into different categories and when some categories of bugs have a technique that can be applied to them regardless of the specific information. What are these category of bugs?
+
+1. Programming bugs such as off by one error, incorrect display of titles, menus, shortcuts unavailable and plenty others.
+1. [Documentation bugs](https://bugzilla.gnome.org/buglist.cgi?type0-0-4=substring&keywords=documentation&keywords_type=allwords&field0-0-0=product&type0-0-1=substring&field0-0-1=component&field0-0-4=longdesc&resolution=FIXED&resolution=WONTFIX&resolution=DUPLICATE&resolution=NOTABUG&resolution=NOTGNOME&resolution=INCOMPLETE&resolution=INVALID&type0-0-3=substring&query_format=advanced&field0-0-3=status_whiteboard&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=NEEDINFO&bug_status=RESOLVED&bug_status=VERIFIED&field0-0-2=short_desc&type0-0-0=substring&type0-0-2=substring) such as inconsistent user help instructions, typos (that is, spelling mistakes), missing format for content (technical term: missing markup) and so on.
+1. [Translation bugs](https://bugzilla.gnome.org/buglist.cgi?type0-0-4=substring;keywords=I18N;keywords_type=allwords;field0-0-0=product;type0-0-1=substring;field0-0-1=component;field0-0-4=longdesc;resolution=FIXED;resolution=WONTFIX;resolution=DUPLICATE;resolution=NOTABUG;resolution=NOTGNOME;resolution=INCOMPLETE;resolution=INVALID;type0-0-3=substring;query_format=advanced;field0-0-3=status_whiteboard;bug_status=UNCONFIRMED;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;bug_status=NEEDINFO;bug_status=RESOLVED;bug_status=VERIFIED;field0-0-2=short_desc;type0-0-0=substring;type0-0-2=substring) such as incorrect translation, outdated translation, missing translation strings and so on.
+1. [String bugs](https://bugzilla.gnome.org/buglist.cgi?type0-0-4=substring;keywords=string;keywords_type=allwords;field0-0-0=product;type0-0-1=substring;field0-0-1=component;field0-0-4=longdesc;resolution=FIXED;resolution=WONTFIX;resolution=DUPLICATE;resolution=NOTABUG;resolution=NOTGNOME;resolution=INCOMPLETE;resolution=INVALID;type0-0-3=substring;query_format=advanced;field0-0-3=status_whiteboard;bug_status=UNCONFIRMED;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;bug_status=NEEDINFO;bug_status=RESOLVED;bug_status=VERIFIED;field0-0-2=short_desc;type0-0-0=substring;type0-0-2=substring) such as typos in the text you see in the Graphical User Interface of a program.
+
+If you know which bug you would like to resolve but have no clue what changes to make, you should [look up the mentor listed for the project](https://wiki.gnome.org/GnomeLove/Mentors). Most mentors can be found logged in on GNOME's IRC network. You can contact them by sending a message to their IRC usernames called "nicks". This document has a section shows you how to connect to an IRC network and chatroom. 
+
+__How do I submit changes made to source code?__
+
 You have selected a bug to solve? Great! You know how to fix it? Great! You have made the change? Great! How do I know show these changes to the world? This procedure is called _making a patch_. A patch is a file that contains the changes you made to the source code in order to fix an issue.
 
-To make a patch, in the git repository of the project you made changes to:
+_To make a patch, in the git repository of the project you made changes to_:
 
-1. Add changed files. This command tells git that you are ready to save the changes to these files. This command means that you are adding _all_ files you changed, to be saved: `git add -u`. If want to add each file one by one, then use `git add /path/to/file`. Replace /path/to/file with actual path file name and it's extension, of course. You can press "Tab" key to compelete the path and file name after typing some letters of the same.
+1. Add changed files. This command tells git that you are ready to save the changes to these files. This command means that you are adding _all_ files you changed, to be saved: `git add -u`. 
+
+If want to add each file one by one, then use `git add /path/to/file`. Replace /path/to/file with actual path file name and it's extension, of course. You can press "Tab" key to compelete the path and file name after typing some letters of the same.
 
 1. Check if files you require have been added with `git status`. You should see output like this:
-
 ```
 sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git status
 # On branch stubs
@@ -191,8 +261,7 @@ sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git status
 #
 ```
 
-1. Commit (that is, save these changes) `git commit`. You will see now an editor where you can type your commit message.
-The commit message is needed for explaining other developers what you have done. It should follow a standard format: a short title, followed by a longer explanation, followed by a link to the relevant bug. Between this sections you should leave an empty line. Here is an example of a good commit message:
+1. Commit (that is, save these changes) `git commit`. You will see now an editor where you can type your commit message. The commit message is needed for explaining other developers what you have done. It should follow a standard format: a short title, followed by a longer explanation, followed by a link to the relevant bug. Between this sections you should leave an empty line. Here is an example of a good commit message:
 
 ```
 Add a minimal application menu
@@ -217,11 +286,9 @@ sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git commit
 1. Check your commit with `git log`
 1. Generate a patch with `git format-patch HEAD~1`
 You should see terminal output like this:
-
 ```
 sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git format-patch HEAD~1
 0001-Added-definition-for-strategies.patch
-
 ```
 
 Congragulations! Your first patch is ready to be uploaded on to bugzilla!
@@ -230,23 +297,71 @@ In the above git command, 1 indicates that git must generate the patch file for 
 
 __How do I submit this patch file?__
 
-1. Open the bug page in your web browser.
+1. Open the bug page for whom you have the above changes in your web browser.
 1. At the bottom of the page, click "Add an attachement", this will take you to a page where you can _attach_ (that is, upload) your patch file to the bug page.
-
-In the directory (that is, the git repository) where you generated the patch, you can either move this patch to another folder to keep for future use or delete it, as per your convinience.
 
 __Where can I learn more about Git?__
 
 You will be able to appreciate how git was developed, learn the advanced features it provides, accquire deeper understanding of how git works by reading these popular books and resources:
 
  * [Git-scm book](http://git-scm.com/book)
- * [Wikipedia git page](http://en.wikipedia.org/wiki/Git_(software))
+ * [Wikipedia page for Git](http://en.wikipedia.org/wiki/Git_(software))
+
+__What happens after I upload the patch?__
+
+After you upload the patch on to a bug page. You will see a notification like this at the top of the page:
+
+<a href="/static/images/bug-notification.png"><img src="/static/images/bug-notification.png" style="width:500px"></a>
+
+These are the users who are interested in bugs and patches being uploaded to that particular project. They will receive an e-mail that you have uploaded a patch on to the bug page. Among these people, will be developers, maintaners and experienced contributors. This means, they will now be interested in reviewing your patch. The review can be from anyone experienced in the project.
+
+The reviewerer may give you a full review or only review part of the patch indicating what issues you need to resolve first. A few common possible issues with a patch can be (but not limited to):
+
+1. Patch does not have a good commit message.
+1. Your changes are not complete.
+1. You changes have incorrect indenting, syntax and so on.
+1. Your changes give a solution that could introduce other problems.
+
+You should then comment if you have understood the review and ask for clarification if you haven't understood any part of the review. Here, "not understood the review" means:
+
+1. You don't know what to do to resolve the issue when the reviewer has pointed out some part of your patch.
+1. You don't know what resources you should look at in order to make the patch better.
+1. You are encountering some difficulty in correcting your changes in the source code on your computer.
+
+__I made the changes as per review, now what?__
+
+Great! You can now follow the steps:
+
+1. Check status with `git status`. Have you added or modified any new files relevant to this patch? If so, add them with `git add /path/to/file`.
+1. To add files that you have modified, use `git add -u`.
+1. Commit them with `git commit --amend`. This command will overwrite your previous commit.
+
+__Tips__: 
+
+1. If you want to discard your old commit and start afresh, use `git reset --hard HEAD~1`. 
+1. If you want to discard _only_ the commit but keep the changes use `git reset --soft HEAD~1`.
+
+__Lather, rinse, repeat!__
+
+Now, you can make your patch again and re-upload it! Wait for the review and repeat the procedure until the reviewer marks your patch with "accepted_commit-now" status. You will receive an e-mail notification about it. This indicates that the patch will be incorporated into the source code located on git.gnome.org. __Congragulations, you have now successfully made your first GNOME contribution!__
+
+__Testing your patch__
+
+Did the reviewer ask you if you have tested your patch? If yes, then you will need to compile the software you made changes to. Compiling software from source code brings it's own set of complications especially because the computer you are using develop/modify software is also the same as the one you want to use for your daily computing needs. What are these problems? How can I develop software without breaking my operating system? Read on :-)
 
 ## Why should I setup a development environment?
 
-Contributions to open source projects, be it code or documentation or design to a project, are always "Upstream". Upstream means that your work will be incorporated in the current source code and released later during the release cycle of a product. This means you have to work with the code available in the development repository of the project.
+Contributions to open source projects, be it code or documentation or design to a project, are always "Upstream". Upstream means that your work will be incorporated in the current source code and released as a binary later during the next release cycle of a project. You are contributing upstream when you make changes to source code available on git.gnome.org.
 
-Since contributions are always upstream, we are chasing a moving target, really. To contribute, its good practise if you have the product built from source - source that is available in the development repository. Mainly, because you don't want to fix or build something that has already been accomplished or components of the product have changed, thus breaking your contribution.
+_Why should I have the latest source code all the time?__
+
+So that:
+
+1. You will _not_ end up resolving an issue that has already been solved by someone else. 
+1. You will _not_ end up changing some parts of software that has already been removed.
+1. You _will_ be able test your changes and see that they don't break the software usage!
+
+__Why a separate development environment?__
 
 Software in development repositories are prone to breakage and so if you mix stable binaries (executables that come with your Gnu/Linux distribution) with development binaries (the software that you will compile from source), you will end up with a broken system (that is, unusable) every now and then.
 
@@ -254,7 +369,7 @@ To avoid these hassles, one must keep development environment separate from thei
 
 __Method 1: Install your development environment on a separate machine__
 
-This method is suitable if you..
+This method is suitable if you...
 
 * Have a spare computer with small processing power.
 
@@ -281,7 +396,7 @@ Visually, you are running a completely different operating system on a existing 
 
 __Method 3: Use JHbuild and keep an isolated development environment in your daily-use computer__
 
-This method is suitable for those who would like to keep their development environment and regular use operating system on a single computer. JHbuild is essentially a few build scripts that bring source code and compile them in an orderly fashion.
+This method is suitable for those who would like to keep their development environment and regular use operating system on a single computer.
 
 ## JHbuild & Set-up ##
 
@@ -302,19 +417,16 @@ sindhus@leh:~/Documents/code/jhbuild$ which jhbuild
 /home/sindhus/.local/bin/jhbuild
 ```
 
-## Preparing JHbuild to compile modules from source ##
+__Preparing JHbuild to compile modules from source__
 
-Now, we can move on preparing jhbuild to compile from source.
+* Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location. 
 
-Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location.
+* Another purpose of this section is that, some GNOME module would need compilers & build tools. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
 
-Another purpose of this section is that, some GNOME module would need compilers & build tools. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
+* JHbuild also requires development libraries to compile certain software from source. To understand the term "development libraries", consider the FLOSS alternative for .NET framework - [Mono](http://mono-project.com). To compile, mono we would require "libmono-dev". The prefix "lib" indicates that it is a library and the suffix "-dev" indicates it this software package contains headers. Headers are necessary to compile software. If you have taken C programming course, you would know that *.h are header files required to access some functions. Libraries are collection of such functions.
 
-JHbuild also requires development libraries to compile certain software from source. To understand the term "development libraries", consider the FLOSS alternative for .NET framework - [Mono](http://mono-project.com). To compile, mono we would require "libmono-dev". The prefix "lib" indicates that it is a library and the suffix "-dev" indicates it this software package contains headers. Headers are necessary to compile software. If you have taken C programming course, you would know that *.h are header files required to access some functions. Libraries are collection of such functions.
+_To prepare JHbuild_:
 
-__To prepare JHbuild__:
-
-1. `touch ~/.jhbuildrc`
 1. cp ~/jhbuild/examples/sample.jhbuildrc ~/./jhbuildrc
 1. `chmod 0755 /opt`
 1. `mkdir /opt/gnome`
@@ -326,11 +438,11 @@ The last command is builds GTK+ library. Since, GTK+ is the most basic and thoro
 1. Speed of your internet connection (to download GNOME modules' source code from git.gnome.org).
 1. Speed of your processor (to compile the downloaded modules one by one).
 
-## Configuring your JHbuild ##
+__Configuring your JHbuild__
 
 The configuration for JHbuild exists in ~/.jhbuildrc. You can configure this according to your needs. For example, compiling the Webkit library is time consuming and it is readily available as a binary in most package repositories. Hence in the .jhbuildrc file, we can add it to a section called "skip" and thus telling jhbuild to _skip_ building Webkit from source.
 
-My .jhbuildrc looks like this:
+_My .jhbuildrc looks like this_:
 
 ```
 # -*- mode: python -*-
@@ -424,7 +536,7 @@ module_extra_env['pygobject'] = {'PYTHON': 'python3'}
 
 You can read [how I arrived at this configuration file here](http://sindhus.bitbucket.org/til-JHbuild-commands.html).
 
-## JHbuild commands ##
+__JHbuild commands__
 
 Here is a list of a few basic and useful commands of jhbuild to be familiar with when you are using Jhbuild to build GNOME modules. You don't have to memorise them, just keep them handy for quick reference :-)
 
@@ -437,7 +549,7 @@ Here is a list of a few basic and useful commands of jhbuild to be familiar with
 * To run a sucessfully built module: `jhbuild run <module-name`.
 * To see where a binary of a jhbuild module is located: `jhbuild run which <module-name`.
 
-## Compile a GNOME from source ##
+__Compile a GNOME module from source__
 
 The following sequence of commands show how you can compile a GNOME module:
 
@@ -465,7 +577,8 @@ wayland
 gtk+
 gnome-dictionary
 ```
-Do you have the modules already compiled?
+
+Do you have the depedent modules (from the start to the last but one module) already compiled?
 
 1. If yes, you may build your module with `jhbuild buildone gnome-dictionary`.
 1. If no, then build your module with `jhbuild build gnome-dictionary`.
@@ -491,7 +604,7 @@ JHbuild will pick up gnome-dictionary source from `~/checkout/gnome/gnome-dictio
 
 To avoid this confusion, the simplest approach is to make changes in the git repository available at `~/checkout/gnome`. Otherwise, do remember that you have two places on your computer where you have a copy of the same git repository. One with changes you made locally and one without!
 
-To tell JHbuild to build in any git repository:
+_To tell JHbuild to build in any git repository_:
 
 1. `jhbuild shell`
 1. `jhbuild make`
@@ -514,26 +627,29 @@ Mailing lists can be used to:
 1. Asking for reviews for patches filed (when nobody has reviewed your patch even after a long time). [See example](https://mail.gnome.org/archives/gnome-doc-list/2013-August/msg00016.html).
 1. Discuss a new feature you have in mind for the project?
 
-Remember that before you approach a mailing list, you must do your research. Mailing list is not an alternative to Google search.
+Remember that before you approach a mailing list, you must do your research. Mailing lists are not an alternative to Google search.
 
 __Caution!__: Please don't post topics outside of a mailing lists's concern. For example: Don't post on desktop-devel-list asking for help on how to use GNOME, post it on gnome-love. gnome-love list helps newcomers on a wide range of topics. Posting on a mailing list means that _all_ people who are subscribed to a mailing list will get a copy of your e-mail and if it's not relevant to the list's topic, it will be ignored and you will not receive help you require.
 
 __Tip__: Use a simple password that is different from your e-mail/other important accounts' password.
 
-## Documentation specific resources ##
+## Documentation & YOU ##
 
-If you want to know what you can do for Documenation in GNOME, check the following pages:
+The part where you make changes in source code is the part that differs for categories of contribution. To contribute to GNOME documentation, the specific knowledge you will require are:
 
-1. [Contributing to GNOME Documentation, how?](https://wiki.gnome.org/DocumentationProject/Contributing)
-1. [What are the tasks available in Documentation?](https://wiki.gnome.org/DocumentationProject/Tasks)
-1. [Who can I approach to help me with contribution to Documentation?](https://wiki.gnome.org/GnomeLove/Mentors#Design.2C_Documentation.2C_Engagement.2C_etc.).
+1. How to use the software you are writing help instructions for?
 
-__Docs related mailing lists__:
+You can become familiar with the software only by using it thoroughly. Use it in your daily computing needs means that you are also testing it for bugs!
 
- * [gnome-doc-devel-list](https://mail.gnome.org/mailman/listinfo/gnome-doc-devel-list).
- * [gnome-doc-list](https://mail.gnome.org/mailman/listinfo/gnome-doc-list).
+1. Familiarity with "Yelp".
 
-### Learn Mallard ###
+Yelp is the software that displays User Help files. To see Desktop Help, press F1 on your GNOME Desktop.
+
+1. Mallard syntax.
+
+Mallard is the language used to write GNOME Documentation. This language will tell Yelp how to present certain information. By present we mean, how the styles and formatting will be appear when you view a user help page.
+
+__How should I learn Mallard?__
 
 You can learn Mallard in the following ways:'
 
@@ -552,6 +668,21 @@ The best way to teach yourself any new language is to build something with it. T
 
 For example [Visa Help](http://sindhus.bitbucket.org/docs/gnome-visa/index.html) - A few Mallard based help pages about Visa application procedure in India.
 
+__Documentation Resouces__
+
+1. [Contributing to GNOME Documentation, how?](https://wiki.gnome.org/DocumentationProject/Contributing)
+1. [What are the tasks available in Documentation?](https://wiki.gnome.org/DocumentationProject/Tasks)
+1. [Who can I approach to help me with contribution to Documentation?](https://wiki.gnome.org/GnomeLove/Mentors#Design.2C_Documentation.2C_Engagement.2C_etc.).
+
+_Docs related mailing lists_:
+
+ * [gnome-doc-devel-list](https://mail.gnome.org/mailman/listinfo/gnome-doc-devel-list).
+ * [gnome-doc-list](https://mail.gnome.org/mailman/listinfo/gnome-doc-list).
+
 ## Chat on IRC! ##
 
 TOWRITE!
+
+## Make this document better! ##
+
+You can make this document better by cloning it from [Guide to GNOME contribution](https://github.com/sindhus/guide-to-gnome-contribution) github repository. Github also allows for ["Pull Requests"](https://help.github.com/articles/using-pull-requests), which means you can create a copy of this repository in your github account, make changes and submit it to me for acceptance into my repository!

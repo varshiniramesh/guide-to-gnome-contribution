@@ -240,6 +240,8 @@ Each bug has a different solution. So there is no generic answer or solution to 
 
 If you know which bug you would like to resolve but have no clue what changes to make, you should [look up the mentor listed for the project](https://wiki.gnome.org/GnomeLove/Mentors). Most mentors can be found logged in on GNOME's IRC network. You can contact them by sending a message to their IRC usernames called "nicks". This document has a section shows you how to connect to an IRC network and chatroom.
 
+__Tip__: One of the most common mistakes that newbies commit is not paying enough attention to coding style. Every FLOSS project has some kind of rules that you should follow. For example for GTK+ we have this [documentt](https://git.gnome.org/browse/gtk+/plain/docs/CODING-STYLE). Double check this details before uploading your changes.
+
 __How do I submit changes made to source code?__
 
 You have selected a bug to solve? Great! You know how to fix it? Great! You have made the change? Great! How do I know show these changes to the world? This procedure is called _making a patch_. A patch is a file that contains the changes you made to the source code in order to fix an issue.

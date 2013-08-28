@@ -197,8 +197,11 @@ The commit message is needed for explaining other developers what you have done.
 ```
 Add a minimal application menu
 
-While Dictionary is a rather small application which probably could do well with only an application menu and no menubar, this would require a couple of design changes, as almost all actions currently in the menus are window-specific.
-So for now, leave the menubar alone and only add a minimal application menu.
+While Dictionary is a rather small application which probably
+could do well with only an application menu and no menubar, this
+would require a couple of design changes, as almost all actions
+currently in the menus are window-specific. So for now, leave the
+menubar alone and only add a minimal application menu.
 
 https://bugzilla.gnome.org/show_bug.cgi?id=674939
 ```

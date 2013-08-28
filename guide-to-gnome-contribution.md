@@ -116,11 +116,11 @@ The workflow in fixing a bug is as follows:
 
 __Now consider the following reasons__:
 
-1. Free and Open source software (FLOSS) is a collaborative effort from people spread throughout the world. There are many people like you who make changes to source code. When multiple change the same files, there can be confusion as to who changed what. What if those changes conflict each other? What if some changes introduces a bug? What if some change makes the software unusable? 
- 
+1. Free and Open source software (FLOSS) is a collaborative effort from people spread throughout the world. There are many people like you who make changes to source code. When multiple change the same files, there can be confusion as to who changed what. What if those changes conflict each other? What if some changes introduces a bug? What if some change makes the software unusable?
+
 1. How do we submit changes to software in such a way that other people will be able to test it? What if person A submits his change in a text file (*.txt) and person B submits his change in another format? What if person C modifies the same files as person B and both of them submit their changes together?
 
-In order to keep track of changes, we need a system in place. Changes are also called "Revisions". Revision control software can track changes. Git is one such revision control software. GNOME uses Git. Git allows you to submit changes made to source code in a convinient format called "Patch". Thus giving all of us a common format to test changes made by others. A patch file will tell Git what changes have been made, where and that git should apply those changes automatically!
+In order to keep track of changes, we need a system in place. Changes are also called "Revisions". [Revision control software](http://en.wikipedia.org/wiki/Revision_control) can track changes. [Git](http://git-scm.com/) is one such revision control software. GNOME uses Git. Git allows you to submit changes made to source code in a convinient format called "Patch". Thus giving all of us a common format to test changes made by others. A patch file will tell Git what changes have been made, where and that git should apply those changes automatically!
 
 Great, __now we know why we need Git!__ Before we proceed to learn how to use Git, we should know a few terminal commands.
 
@@ -238,7 +238,7 @@ Each bug has a different solution. So there is no generic answer or solution to 
 1. [Translation bugs](https://bugzilla.gnome.org/buglist.cgi?type0-0-4=substring;keywords=I18N;keywords_type=allwords;field0-0-0=product;type0-0-1=substring;field0-0-1=component;field0-0-4=longdesc;resolution=FIXED;resolution=WONTFIX;resolution=DUPLICATE;resolution=NOTABUG;resolution=NOTGNOME;resolution=INCOMPLETE;resolution=INVALID;type0-0-3=substring;query_format=advanced;field0-0-3=status_whiteboard;bug_status=UNCONFIRMED;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;bug_status=NEEDINFO;bug_status=RESOLVED;bug_status=VERIFIED;field0-0-2=short_desc;type0-0-0=substring;type0-0-2=substring) such as incorrect translation, outdated translation, missing translation strings and so on.
 1. [String bugs](https://bugzilla.gnome.org/buglist.cgi?type0-0-4=substring;keywords=string;keywords_type=allwords;field0-0-0=product;type0-0-1=substring;field0-0-1=component;field0-0-4=longdesc;resolution=FIXED;resolution=WONTFIX;resolution=DUPLICATE;resolution=NOTABUG;resolution=NOTGNOME;resolution=INCOMPLETE;resolution=INVALID;type0-0-3=substring;query_format=advanced;field0-0-3=status_whiteboard;bug_status=UNCONFIRMED;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;bug_status=NEEDINFO;bug_status=RESOLVED;bug_status=VERIFIED;field0-0-2=short_desc;type0-0-0=substring;type0-0-2=substring) such as typos in the text you see in the Graphical User Interface of a program.
 
-If you know which bug you would like to resolve but have no clue what changes to make, you should [look up the mentor listed for the project](https://wiki.gnome.org/GnomeLove/Mentors). Most mentors can be found logged in on GNOME's IRC network. You can contact them by sending a message to their IRC usernames called "nicks". This document has a section shows you how to connect to an IRC network and chatroom. 
+If you know which bug you would like to resolve but have no clue what changes to make, you should [look up the mentor listed for the project](https://wiki.gnome.org/GnomeLove/Mentors). Most mentors can be found logged in on GNOME's IRC network. You can contact them by sending a message to their IRC usernames called "nicks". This document has a section shows you how to connect to an IRC network and chatroom.
 
 __How do I submit changes made to source code?__
 
@@ -246,7 +246,7 @@ You have selected a bug to solve? Great! You know how to fix it? Great! You have
 
 _To make a patch, in the git repository of the project you made changes to_:
 
-1. Add changed files. This command tells git that you are ready to save the changes to these files. This command means that you are adding _all_ files you changed, to be saved: `git add -u`. 
+1. Add changed files. This command tells git that you are ready to save the changes to these files. This command means that you are adding _all_ files you changed, to be saved: `git add -u`.
 
 If want to add each file one by one, then use `git add /path/to/file`. Replace /path/to/file with actual path file name and it's extension, of course. You can press "Tab" key to compelete the path and file name after typing some letters of the same.
 
@@ -336,9 +336,9 @@ Great! You can now follow the steps:
 1. To add files that you have modified, use `git add -u`.
 1. Commit them with `git commit --amend`. This command will overwrite your previous commit.
 
-__Tips__: 
+__Tips__:
 
-1. If you want to discard your old commit and start afresh, use `git reset --hard HEAD~1`. 
+1. If you want to discard your old commit and start afresh, use `git reset --hard HEAD~1`.
 1. If you want to discard _only_ the commit but keep the changes use `git reset --soft HEAD~1`.
 
 __Lather, rinse, repeat!__
@@ -357,7 +357,7 @@ _Why should I have the latest source code all the time?__
 
 So that:
 
-1. You will _not_ end up resolving an issue that has already been solved by someone else. 
+1. You will _not_ end up resolving an issue that has already been solved by someone else.
 1. You will _not_ end up changing some parts of software that has already been removed.
 1. You _will_ be able test your changes and see that they don't break the software usage!
 
@@ -419,7 +419,7 @@ sindhus@leh:~/Documents/code/jhbuild$ which jhbuild
 
 __Preparing JHbuild to compile modules from source__
 
-* Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location. 
+* Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location.
 
 * Another purpose of this section is that, some GNOME module would need compilers & build tools. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
 

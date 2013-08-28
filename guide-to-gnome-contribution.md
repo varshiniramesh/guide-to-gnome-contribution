@@ -50,7 +50,7 @@ You will have to register yourself an account on Bugzilla with an e-mail address
 
 __Where does one look for problems?__
 
-[Browse GNOME Bugzilla](https://bugzilla.gnome.org/browse.cgi). The website is fairly intuitive and you should be able to navigate different software projects by selecting your interested projects from the dropdown menu and then clicking on "Show product". 
+[Browse GNOME Bugzilla](https://bugzilla.gnome.org/browse.cgi). The website is fairly intuitive and you should be able to navigate different software projects by selecting your interested projects from the dropdown menu and then clicking on "Show product".
 
 __Tip__: Don't know what projects you would be interested in? In your GNOME desktop, ask yourself which is your favorite application in GNOME? Is it the Dictionary? Is it Terminal? is it Rhythmbox that plays you music? Is it GNOME Desktop itself? Once you decide on a application, search for the name in the dropdown menu and explore the project's bug reports!
 
@@ -91,10 +91,10 @@ __Terminal: to execute commands__
 
 The blinking cursor in the terminal is called 'prompt'. A blinking cursor indicates that terminal is ready to execute your commands. After typing your command, you press "Enter" key. When you open Terminal for the very first time, it's default location will be set to your HOME folder. So, all the following commands listed from here on in this article will create content in your HOME folder. For now, there are only two commands you will need to know to naviagte between directories using a Terminal.
 
-1. `cd some-directory-name` 
+1. `cd some-directory-name`
 `cd` means 'change directory' and _some-directory-name_ can be replaced with the name of the directory you wish to navigate to.
 1. `ls some-directory-name`
-`ls` means you want to view the list of files in the directory your Terminal has _changed_ into. 
+`ls` means you want to view the list of files in the directory your Terminal has _changed_ into.
 
 __Tip__: To know which directory your terminal is currently at, type `pwd`.
 'pwd' is short for 'present' working directory'. You should see an output like `/home/sindhus/gnome-dictionary`.
@@ -118,7 +118,7 @@ The terminal output for the installation would look like this:
 ```
 $ sudo apt-get install git-core
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 The following NEW packages will be installed:
   git-core
@@ -126,7 +126,7 @@ The following NEW packages will be installed:
 Need to get 1,392 B of archives.
 After this operation, 21.5 kB of additional disk space will be used.
 Get:1 http://in.archive.ubuntu.com/ubuntu/ raring/main git-core all 1:1.8.1.2-1 [1,392 B]
-Fetched 1,392 B in 0s (4,097 B/s)     
+Fetched 1,392 B in 0s (4,097 B/s)
 Selecting previously unselected package git-core.
 (Reading database ... 259800 files and directories currently installed.)
 Unpacking git-core (from .../git-core_1%3a1.8.1.2-1_all.deb) ...
@@ -139,7 +139,7 @@ You can check if you have git installed on your computer by following these comm
 
 1. Type `mkdir test` and press Enter. This command will create a new directory called 'test'.
 1. Type `cd test` and press Enter. This means, your terminal is now _inside_ the 'test' directory.
-1. Type `git init` and press Enter. This command will initialize git to _watch_ 'test' directory for files added, removed and revisions made to 'test' directory. If this command fails, then you do not have git installed on your computer. If this command succeeds, you should see an output like this: `Initialized empty Git repository in /home/sindhus/test/.git/`. Instead of 
+1. Type `git init` and press Enter. This command will initialize git to _watch_ 'test' directory for files added, removed and revisions made to 'test' directory. If this command fails, then you do not have git installed on your computer. If this command succeeds, you should see an output like this: `Initialized empty Git repository in /home/sindhus/test/.git/`. Instead of
 sindhus' which is my username, the address will have your username.
 
 __How do I download source of a GNOME project?__
@@ -191,11 +191,23 @@ sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git status
 #
 ```
 
-1. Commit (that is, save these changes) with a message: `git commit -m "Your commit message goes here"`. For example: `git commit -m "Help: Added definition for strategies"`. For this the output would look like:
+1. Commit (that is, save these changes) `git commit`. You will see now an editor where you can type your commit message.
+The commit message is needed for explaining other developers what you have done. It should follow a standard format: a short title, followed by a longer explanation, followed by a link to the relevant bug. Between this sections you should leave an empty line. Here is an example of a good commit message:
 
 ```
-sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git commit -m "Added definition for strategies"
-[stubs 9d18361] Added definition for strategies
+Add a minimal application menu
+
+While Dictionary is a rather small application which probably could do well with only an application menu and no menubar, this would require a couple of design changes, as almost all actions currently in the menus are window-specific.
+So for now, leave the menubar alone and only add a minimal application menu.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=674939
+```
+
+Save and quit the editor when you are done. The terminal should display a message like this:
+
+```
+sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git commit
+[stubs 9d18361] Add a minimal application menu
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
@@ -218,7 +230,7 @@ __How do I submit this patch file?__
 1. Open the bug page in your web browser.
 1. At the bottom of the page, click "Add an attachement", this will take you to a page where you can _attach_ (that is, upload) your patch file to the bug page.
 
-In the directory (that is, the git repository) where you generated the patch, you can either move this patch to another folder to keep for future use or delete it, as per your convinience. 
+In the directory (that is, the git repository) where you generated the patch, you can either move this patch to another folder to keep for future use or delete it, as per your convinience.
 
 __Where can I learn more about Git?__
 
@@ -233,7 +245,7 @@ Contributions to open source projects, be it code or documentation or design to 
 
 Since contributions are always upstream, we are chasing a moving target, really. To contribute, its good practise if you have the product built from source - source that is available in the development repository. Mainly, because you don't want to fix or build something that has already been accomplished or components of the product have changed, thus breaking your contribution.
 
-Software in development repositories are prone to breakage and so if you mix stable binaries (executables that come with your Gnu/Linux distribution) with development binaries (the software that you will compile from source), you will end up with a broken system (that is, unusable) every now and then. 
+Software in development repositories are prone to breakage and so if you mix stable binaries (executables that come with your Gnu/Linux distribution) with development binaries (the software that you will compile from source), you will end up with a broken system (that is, unusable) every now and then.
 
 To avoid these hassles, one must keep development environment separate from their regular/daily usage operating system (such as your Gnu/Linux distribution). There are three ways to achieve this:
 
@@ -251,7 +263,7 @@ As development libraries and products are available as executables as well, one 
 
 __Method 2: Use virtualization to set-up a development environment in your daily-use computer__
 
-* Is your preferred choice of an operating system different from the one you intend to development for? 
+* Is your preferred choice of an operating system different from the one you intend to development for?
 * Are you short on time to set up a new operating system?
 * Are you afraid to dual boot? (perhaps, those having UEFI, especially on Macbooks)
 
@@ -289,9 +301,9 @@ sindhus@leh:~/Documents/code/jhbuild$ which jhbuild
 
 ## Preparing JHbuild to compile modules from source ##
 
-Now, we can move on preparing jhbuild to compile from source. 
+Now, we can move on preparing jhbuild to compile from source.
 
-Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location. 
+Jhbuild keeps compiled GNOME modules in a separate location, away from the stable binaries of your Gnu/Linux distribution. Hence it is necessary to create this separate location.
 
 Another purpose of this section is that, some GNOME module would need compilers & build tools. Example: gcc is a popular C compiler and a requisite in building most GNOME modules. It is not installed by default in most Gnu/Linux distributions.
 
@@ -306,7 +318,7 @@ __To prepare JHbuild__:
 1. `jhbuild sanitycheck`
 1. `jhbuild build gtk+`
 
-The last command is builds GTK+ library. Since, GTK+ is the most basic and thoroughly used library throughout GNOME modules, building GTK+ should pull in all dependencies needed for most other GNOME modules you will build later :-) Building GTK+ could take anywhere between 2 hours to 6 hours+ depending on two main factors: 
+The last command is builds GTK+ library. Since, GTK+ is the most basic and thoroughly used library throughout GNOME modules, building GTK+ should pull in all dependencies needed for most other GNOME modules you will build later :-) Building GTK+ could take anywhere between 2 hours to 6 hours+ depending on two main factors:
 
 1. Speed of your internet connection (to download GNOME modules' source code from git.gnome.org).
 1. Speed of your processor (to compile the downloaded modules one by one).
@@ -450,14 +462,14 @@ wayland
 gtk+
 gnome-dictionary
 ```
-Do you have the modules already compiled? 
+Do you have the modules already compiled?
 
 1. If yes, you may build your module with `jhbuild buildone gnome-dictionary`.
 1. If no, then build your module with `jhbuild build gnome-dictionary`.
 
 __How to compile a GNOME module after making changes to the source code?__
 
-The configuration _checkoutroot_ in your ~/.jhbuildrc will set the location where jhbuild will download source code for a module. The same thing as a `git clone <module-name>`. 
+The configuration _checkoutroot_ in your ~/.jhbuildrc will set the location where jhbuild will download source code for a module. The same thing as a `git clone <module-name>`.
 
 ```
 # what directory should the source be checked out to?
@@ -470,7 +482,7 @@ _Consider this scenario_:
 1. `jhbuild build gnome-dictionary`
 JHbuild will go fetch source code for dependencies and compile gnome-dictionary. The source code it downloads will be put into `~/checkout/gnome`.
 1. Sometime later, I will `git clone git://git.gnome.org/gnome-dictionary` in my HOME directory. I make some changes to the code.
-1. I run `jhbuild buildone gnome-dictionary`. 
+1. I run `jhbuild buildone gnome-dictionary`.
 
 JHbuild will pick up gnome-dictionary source from `~/checkout/gnome/gnome-dictionary` and not changes in ~/gnome-dictionary.
 
@@ -483,7 +495,7 @@ To tell JHbuild to build in any git repository:
 
 ## Sign up to mailing lists ##
 
-GNOME Mailing lists are hubs of information pertaining to any project. In addition to IRC, to keep abreast of the latest news with the projects you are interested in, it is recommended you be subscribed to the following lists from the many available here: 
+GNOME Mailing lists are hubs of information pertaining to any project. In addition to IRC, to keep abreast of the latest news with the projects you are interested in, it is recommended you be subscribed to the following lists from the many available here:
 
 [https://mail.gnome.org/mailman/listinfo](https://mail.gnome.org/mailman/listinfo)
 
@@ -529,7 +541,7 @@ You can learn Mallard in the following ways:'
  1. `cd 1.0`
  1. `yelp index.page`.
 
- * [Keep a mallard cheat sheet handy](http://gitorious.org/projectmallard/mallard-cheat-sheets). 
+ * [Keep a mallard cheat sheet handy](http://gitorious.org/projectmallard/mallard-cheat-sheets).
 
 __Teaching yourself Mallard__:
 

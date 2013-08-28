@@ -653,7 +653,7 @@ __How should I learn Mallard?__
 
 You can learn Mallard in the following ways:'
 
- * Refer to the official website: [projectmallard.org](projectmallard.org)
+ * Refer to the official website: [projectmallard.org](http://projectmallard.org)
  * Refer to the offline mallard specifications by: `git clone git://gitorious.org/projectmallard/projectmallard.git`. To view the specifications after cloning:
 
  1. `cd projectmallard`

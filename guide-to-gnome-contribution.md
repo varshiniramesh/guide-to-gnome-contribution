@@ -21,6 +21,10 @@ While all commands mentioned in this guide should work on most other Gnu/Linux d
 If yes, then go forth!
 If no, then please seek help with these basic requisites. Once you have installed Ubuntu GNOME and are familiar with the terminology listed above, you can use the knowledge in this document for your benefit!
 
+__Note__: This page contains images, you will be unable to see images if you are viewing this page on [github.com/guide-to-gnome-contribution](https://github.com/sindhus/guide-to-gnome-contribution/blob/master/guide-to-gnome-contribution.md). 
+
+To see document with images: [http://sindhus.bitbucket.org/guide-to-gnome-contribution.html](http://sindhus.bitbucket.org/guide-to-gnome-contribution.html).
+
 ## Table Of Contents ##
 
 1. Technical Terms
@@ -355,7 +359,7 @@ Did the reviewer ask you if you have tested your patch? If yes, then you will ne
 
 Contributions to open source projects, be it code or documentation or design to a project, are always "Upstream". Upstream means that your work will be incorporated in the current source code and released as a binary later during the next release cycle of a project. You are contributing upstream when you make changes to source code available on git.gnome.org.
 
-_Why should I have the latest source code all the time?__
+__Why should I have the latest source code all the time?__
 
 So that:
 
@@ -403,6 +407,14 @@ This method is suitable for those who would like to keep their development envir
 ## JHbuild & Set-up ##
 
 JHbuild is a software that compiles GNOME modules (a single term to include both libraries and programs) from source. It makes compiling applications like Gnote, Tomboy, Dictionary, Rhythmbox, Terminal among many others, much easier. GNOME applications are also referred to as "modules" within jhbuild.
+
+__When will I need to setup JHbuild?__
+
+GNOME 3.8 is the recent most stable release of GNOME and most Gnu/Linux distributions carry it. GNOME programs whose source code is in git.gnome.org wouldn't have changed too much from the 3.8 release. However, if:
+
+1. If you do not have GNOME 3.8 on your Gnu/Linux distribution, you can install JHbuild and specifically build the project whose bug you wish to resolve.
+1. If the person on the Bug page reports that the bug was found on "Version: git head", then you will require to build the project from JHbuild.
+1. You have reported a bug in GNOME 3.8 but need to confirm if it exists in the source code available on git.gnome.org, then you will require to build the project from JHbuild.
 
 To setup JHbuild on your computer, type and run the following commands:
 

@@ -21,7 +21,7 @@ While all commands mentioned in this guide should work on most other Gnu/Linux d
 If yes, then go forth!
 If no, then please seek help with these basic requisites. Once you have installed Ubuntu GNOME and are familiar with the terminology listed above, you can use the knowledge in this document for your benefit!
 
-__Note__: This page contains images, you will be unable to see images if you are viewing this page on [github.com/guide-to-gnome-contribution](https://github.com/sindhus/guide-to-gnome-contribution/blob/master/guide-to-gnome-contribution.md). 
+__Note__: This page contains images, you will be unable to see images if you are viewing this page on [github.com/guide-to-gnome-contribution](https://github.com/sindhus/guide-to-gnome-contribution/blob/master/guide-to-gnome-contribution.md).
 
 To see document with images: [http://sindhus.bitbucket.org/guide-to-gnome-contribution.html](http://sindhus.bitbucket.org/guide-to-gnome-contribution.html).
 
@@ -416,9 +416,15 @@ GNOME 3.8 is the recent most stable release of GNOME and most Gnu/Linux distribu
 1. If the person on the Bug page reports that the bug was found on "Version: git head", then you will require to build the project from JHbuild.
 1. You have reported a bug in GNOME 3.8 but need to confirm if it exists in the source code available on git.gnome.org, then you will require to build the project from JHbuild.
 
-To setup JHbuild on your computer, type and run the following commands:
+__How do I install JHBuild?__
 
-1. `git clone git://git.gnome.org/jhbuild
+Before installing JHBuild is a good idea to install certain programs we will need later. We really don't need to install this now but it will make the installation process easier and faster. JHBuild dependencies depend on the Linux distribution you are using. You can found a list of the most common distribution on this [page](https://wiki.gnome.org/JhbuildDependencies). We are using Ubuntu so we need to execute the following command:
+
+```sudo apt-get install autoconf automake autopoint bison cmake cvs docbook-xsl flex gperf guile-1.8-dev libacl1-dev libasound2-dev libatasmart-dev libboost-signals-dev libcups2-dev libdb-dev libffi-dev libfreetype6-dev libgdbm-dev libglu1-mesa-dev libgudev-1.0-dev libicu-dev libiw-dev libldap2-dev libncurses-dev libneon27-dev libnspr4-dev libnss3-dev libpam0g-dev libpng-dev libpulse-dev librsvg2-dev libsasl2-dev libselinux1-dev libtiff-dev libtool libudev-dev libusb-1.0-0-dev libusb-dev libvorbis-dev libx11-dev libxcb-util0-dev libxext-dev libxi-dev libxml-simple-perl libxrandr-dev libxrender-dev libxt-dev libxv-dev ppp-dev python2.7-dev subversion texinfo uuid-dev zlib1g-dev libmpfr-dev libgconf2.0-cil-dev libxtst-dev libx11-xcb-dev libexiv2-dev libexif-dev libcurl4-gnutls-dev libmozjs185-dev intltool libtasn1-3-bin libxkbfile-dev libxft-dev python-dev valac libxcomposite-dev```
+
+The following commands will install JHBuild on your computer:
+
+1. `git clone git://git.gnome.org/jhbuild`
 1. `cd jhbuild`
 1. `./autogen.sh`
 1. `make`
@@ -441,7 +447,7 @@ __Preparing JHbuild to compile modules from source__
 
 _To prepare JHbuild_:
 
-1. cp ~/jhbuild/examples/sample.jhbuildrc ~/./jhbuildrc
+1. `cp ~/jhbuild/examples/sample.jhbuildrc ~/./jhbuildrc`
 1. `chmod 0755 /opt`
 1. `mkdir /opt/gnome`
 1. `jhbuild sanitycheck`

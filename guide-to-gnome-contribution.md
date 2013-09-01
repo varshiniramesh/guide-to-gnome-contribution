@@ -420,7 +420,15 @@ __How do I install JHBuild?__
 
 Before installing JHBuild is a good idea to install certain programs we will need later. We really don't need to install this now but it will make the installation process easier and faster. JHBuild dependencies depend on the Linux distribution you are using. You can found a list of the most common distribution on this [page](https://wiki.gnome.org/JhbuildDependencies). We are using Ubuntu so we need to execute the following command:
 
-```sudo apt-get install autoconf automake autopoint bison cmake cvs docbook-xsl flex gperf guile-1.8-dev libacl1-dev libasound2-dev libatasmart-dev libboost-signals-dev libcups2-dev libdb-dev libffi-dev libfreetype6-dev libgdbm-dev libglu1-mesa-dev libgudev-1.0-dev libicu-dev libiw-dev libldap2-dev libncurses-dev libneon27-dev libnspr4-dev libnss3-dev libpam0g-dev libpng-dev libpulse-dev librsvg2-dev libsasl2-dev libselinux1-dev libtiff-dev libtool libudev-dev libusb-1.0-0-dev libusb-dev libvorbis-dev libx11-dev libxcb-util0-dev libxext-dev libxi-dev libxml-simple-perl libxrandr-dev libxrender-dev libxt-dev libxv-dev ppp-dev python2.7-dev subversion texinfo uuid-dev zlib1g-dev libmpfr-dev libgconf2.0-cil-dev libxtst-dev libx11-xcb-dev libexiv2-dev libexif-dev libcurl4-gnutls-dev libmozjs185-dev intltool libtasn1-3-bin libxkbfile-dev libxft-dev python-dev valac libxcomposite-dev```
+```sudo apt-get install autoconf automake autopoint bison cmake cvs docbook-xsl flex gperf guile-1.8-dev \
+	libacl1-dev libasound2-dev libatasmart-dev libboost-signals-dev libcups2-dev libdb-dev libffi-dev libfreetype6-dev \
+	libgdbm-dev libglu1-mesa-dev libgudev-1.0-dev libicu-dev libiw-dev libldap2-dev libncurses-dev libneon27-dev \
+	libnspr4-dev libnss3-dev libpam0g-dev libpng-dev libpulse-dev librsvg2-dev libsasl2-dev libselinux1-dev  \
+	libtiff-dev libtool libudev-dev libusb-1.0-0-dev libusb-dev libvorbis-dev libx11-dev libxcb-util0-dev libxext-dev \
+	libxi-dev libxml-simple-perl libxrandr-dev libxrender-dev libxt-dev libxv-dev ppp-dev python2.7-dev subversion \
+	texinfo uuid-dev zlib1g-dev libmpfr-dev libgconf2.0-cil-dev libxtst-dev libx11-xcb-dev libexiv2-dev libexif-dev \
+	libcurl4-gnutls-dev libmozjs185-dev intltool libtasn1-3-bin libxkbfile-dev libxft-dev python-dev valac \
+	libxcomposite-dev```
 
 The following commands will install JHBuild on your computer:
 

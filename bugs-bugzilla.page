@@ -1,0 +1,171 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="bugs-bugzilla">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="git-guide"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Bugs and Bugzilla</title>
+
+  <p>Problems encountered when you use any software are called <em>Bugs</em>. Bugs can be caused due to many reasons such as faulty code, an inadvertant changes, parts of the software becoming inconsistent due to changes and so on. Simply put there is said to be a bug in the software when the software doesn't behave as expected.</p>
+
+  <p>Just as FOSS encourages improving its code and dependents through contributions by users and enthusiasts across the globe, it also encourages filing reports of software bugs on a centralized website called <app>Bugzilla</app>. You can access <app>GNOME</app> <app>Bugzilla</app> at <link href="http://bugzilla.gnome.org">bugzilla.gnome.org</link>.</p>
+
+  <note>
+    <p>All FOSS projects by spirit of free software in turn use free software. <link href="http://bugzilla.org"><app>Bugzilla</app></link> is a FOSS project by Mozilla Corporation.</p>
+  </note>
+
+  <section id="find-bugs">
+    <title>How do I find bugs?</title>
+
+    <p>When you use <app>GNOME</app> for your daily computing needs such as looking up a definition in <app>Dictionary</app>, listening to music in <app>Music</app>, taking notes in <app>Notes</app> and so on, you will be able identify missing features, inconsistent instructions in user manual, memory and performance issues and so on. Issues can be as minor as a button being too small to major as the software closing abruptly or performing sluggishly.</p>
+
+    <p>Examples of bugs:</p>
+
+    <list>
+      <item>
+        <p><link href="https://bugzilla.gnome.org/show_bug.cgi?id=688762">Bug 688762</link> - File->"Open a copy" should really be View->"New view"</p>
+      </item>
+      <item>
+        <p><link href="https://bugzilla.gnome.org/show_bug.cgi?id=659272">Bug 659272</link> - reset missed counter when viewing messages</p>
+      </item>
+      <item>
+        <p><link href="https://bugzilla.gnome.org/show_bug.cgi?id=702204">Bug 702204</link> - Keyboard shortcut to remove messages </p>
+      </item>
+    </list>
+
+  </section>
+
+  <section id="signup-bugzilla">
+    <title>Sign up for a Bugzilla account</title>
+
+    <p>To comment on bug reports and/or file new bugs. The signup is required so as to prevent spam and annoymous bug reports that may be spam or irrelevant. Your bugzilla account will be tied to the email address you signup with. You will receive notifications when someone comments on a bug you have commented on and/or filed a bug and/or you are one of the people who receive notifications for that particular bug or project.</p>
+
+    <steps>
+      <item>
+        <p>Signup for a <app>GNOME</app> <app>Bugzilla</app> account by visiting <link href="https://bugzilla.gnome.org/createaccount.cgi">https://bugzilla.gnome.org/createaccount.cgi</link>.</p>
+      </item>
+      <item>
+        <p>Once you submit your e-mail address, you will be sent a confirmation e-mail. Check your spam/trash folders in your e-mail inbox if you are unable to find it in your inbox. This confirmation e-mail will contain a link that you must visit within 3 days, otherwise it will expire.</p>
+      </item>
+      <item>
+        <p>Once you have completed the above steps and signed up for an account, you should be able to login with the e-mail address you have provided and the password you have set.</p>
+      </item>
+    </steps>
+
+  </section>
+
+  <section id="report-bugs">
+    <title>How to report bugs?</title>
+
+    <p>If you have noticed inconsistencies in any <app>GNOME</app> app, you can report it as a bug, however before you do so, consider the following:</p>
+
+    <terms>
+      <item>
+        <title>Check if the issue has already been reported</title>
+        <p>Reporting a bug that has already been filed is not useful to anyone. Search <app>Bugzilla</app> for issues relevant to the one you want to report by utilizing the <link href="https://bugzilla.gnome.org/query.cgi?format=advanced"><em>Advanced Search</em></link> feature.</p>
+        <steps>
+          <item>
+            <p>Select the <em>Product</em> (<em>Which <app>GNOME</app> application</em>?)</p>
+          </item>
+          <item>
+            <note style="tip">
+              <p>To select multiple options on a list, press and hold <key>Ctrl</key> to select.</p>
+            </note>
+            <p>Select all options for <em>Status</em> except <em>RESOLVED</em> and <em>VERIFIED</em></p>
+          </item>
+          <item>
+            <p>Select <em>---</em> for <em>Resolution</em>.</p>
+          </item>
+          <item>
+            <p>Select <em>Linux</em> for <em>OS</em> list.</p>
+          </item>
+          <item>
+            <p>Press <gui style="button">Search</gui>.</p>
+          </item>
+          <item>
+            <p>From the search results, skim and scan through the <em>Summary</em> column for any description that is relevant to the bug report you intend to file. Read through such reports.</p>
+          </item>
+        </steps>
+      </item>
+      <item>
+        <title>Update your system</title>
+        <note style="warning">
+          <p>Upgrading is a double edged sword, while it may fix issues with newer versions of software, it may also break the system with newer versions having unforseen bugs and compatibility issues. Refer to your distribution's release notes or official website on the internet for news about the same. Upgrade only when necessary.</p>
+        </note>
+        <p>You are most likely to see bugs when the versions of software you use are quite old. Often upgrading your distribution to the latest available versions of software could resolve bugs you experience because newer versions might have fixed the issues you are experienced. To update your <app>Arch Linux</app> based distribution :</p>
+        <steps>
+          <item>
+            <p>In a terminal, type and run <cmd>sudo pacman -Syu</cmd> and enter your user password.</p>
+          </item>
+          <item>
+            <p>Answer with <em>Y</em> or <em>N</em> to the onscreen questions.</p>
+          </item>
+          <item>
+            <p>Once the upgrade has finished, restart your computer.</p>
+          </item>
+        </steps>
+      </item>
+      <item>
+        <title>Update your source code [JHBuild specific]</title>
+        <p>If you have encountered a bug whilst compiling a <app>GNOME</app> module from source, update relevant source code using <app>JHBuild</app>. For example: Reporter of <link href="https://bugzilla.gnome.org/show_bug.cgi?id=720658">bug 720658</link>, reports that compilation of module <app>GJS</app> fails as name of a certain file was hardcoded along with the version in its filename. Thus <app>GJS</app> was unable to find the right file. A developer comments that this issue was fixed in a certain commit of <app>JHBuild</app>. Thus updating <app>JHBuild</app> source code resolved the issue.</p>
+      </item>
+    </terms>
+
+    <p>Once you are absolutely sure that no such bug report has been filed previously, you should file a bug against the relevant project thus:</p>
+
+    <steps>
+      <item>
+        <p>In an editor such as <link href=""><app>Gedit</app></link> note down, the existing behaviour, expected behaviour of the application you intend to file a bug for.</p>
+      </item>
+      <item>
+        <p>In a web browser open, <link href="https://bugzilla.gnome.org/enter_bug.cgi">https://bugzilla.gnome.org/enter_bug.cgi</link>.</p>
+      </item>
+      <item>
+        <p>Click on <em>All: Show all products</em>.</p>
+      </item>
+      <item>
+        <p>Manually scroll through the page or press <keyseq><key>Ctrl</key><key>F</key></keyseq>, type the name of the <app>GNOME</app> application or module you want to file against. Once you have found the module on the page, click on the link provided.</p>
+      </item>
+      <item>
+        <p>Specify the <em>Component</em>, <em>Version</em> and <em>OS</em>.</p>
+      </item>
+      <item>
+        <note style="warning">
+          <p>Never use SMS language or short forms, just keep your summary as precise as possible.</p>
+        </note>
+        <p>Type a short summary for your bug report, such that it highlights the main issue in your bug report.</p>
+      </item>
+      <item>
+        <note style="warning">
+          <p>Always type complete words, use proper punctuation and grammar in your description. Avoid abuse of exclamatory and question marks. Form readable paragraphs of 4-5 lines each.</p>
+        </note>
+        <p>For the <em>Description</em>, from <em>Step 1</em>, copy and paste the text where you have noted down the existing and expected behaviour and other details of the bug experienced.</p>
+      </item>
+      <item>
+        <p>If you have any screenshots or relevant information to attach, use <gui style="button">Add an attchment</gui>.</p>
+      </item>
+      <item>
+        <note style="important">
+          <p>If English is not your native language, please mention so in the bug report. English is not the first language for most people and so the grammar you use could project different meaning to different people.</p>
+        </note>
+        <p>Re-read your bug report for grammatical correctness and etiqette. Press <gui style="button">Commit</gui> to submit the bug report.</p>
+      </item>
+    </steps>
+
+    <p>Once you have submitted you have submitted your bug report, you will see that the <app>Bugzilla</app> has sent out e-mail notifications to certain list of e-mail addresses. These e-mail addresses are of developers, maintainers and all those who are interested in the project you have filed a bug against. You will receive notifications on further comments made on the bug report through e-mail.</p>
+
+  </section>
+
+</page>

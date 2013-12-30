@@ -1,0 +1,85 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="git-setup">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="git-basics"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Setup <app>Git</app></title>
+
+  <p>To use <app>Git</app> on your distribution, you would need to install and configure it. The following sections will show you how to:</p>
+
+  <section id="git-pacman">
+    <title>Install <app>Git</app></title>
+
+    <p><app>Git</app> is available on <app>Pacman</app> as <app>git-VERSION</app>, where <em>VERSION</em> could be anything of the format <em>x.x.x.x-x</em>, for example <var>git-1.8.5.2-1</var>. Type and run <cmd>sudo pacman -S git</cmd>. You should be seeing terminal output similar to:</p>
+
+    <code>
+      [user@bridgelinux ~]$ sudo pacman -S git
+      resolving dependencies...
+      looking for inter-conflicts...
+
+      Packages (2): perl-error-0.17021-1  git-1.8.5.2-1
+
+      Total Download Size:    3.68 MiB
+      Total Installed Size:   20.89 MiB
+
+      :: Proceed with installation? [Y/n] 
+      :: Retrieving packages ...
+       perl-error-0.17021-...    18.3 KiB  36.0K/s 00:01 [######################]   0%
+       git-1.8.5.2-1-x86_64       3.7 MiB   136K/s 00:28 [######################] 100%
+      (2/2) checking keys in keyring                     [######################] 100%
+      (2/2) checking package integrity                   [######################] 100%
+      (2/2) loading package files                        [######################] 100%
+      (2/2) checking for file conflicts                  [######################] 100%
+      (2/2) checking available disk space                [######################] 100%
+      (1/2) installing perl-error                        [######################] 100%
+      (2/2) installing git                               [######################] 100%
+      Optional dependencies for git
+          tk: gitk and git gui
+          perl-libwww: git svn
+          perl-term-readkey: git svn
+          perl-mime-tools: git send-email
+          perl-net-smtp-ssl: git send-email TLS support
+          perl-authen-sasl: git send-email TLS support
+          python2: various helper scripts [installed]
+          subversion: git svn [installed]
+          cvsps: git cvsimport
+          gnome-keyring: GNOME keyring credential helper [installed]
+    </code>
+
+  </section>
+
+  <section id="git-configure">
+    <title>Configure <app>Git</app> first time</title>
+
+    <p>We know that <app>Git</app> records changes to software source. These changes give accountability, that is <em>Who made these changes?</em>. In order for <app>Git</app> to show your name and e-mail address as the author of changes you will be making, you would have to set it. This is a one time configuration, that is, you will be required to set these values if you are using <app>Git</app> for the very first time. Your configuration is stored in the file available at <var>~/.gitconfig</var>.</p>
+
+    <steps>
+      <title>Set your name and e-mail in <app>Git</app>:</title>
+      <item>
+        <p>Type and run <cmd>git config --global user.name "Firstname Lastname"</cmd>, where firstname is your given name and lastname is your surname. For example: <cmd>git config --global user.name "Sindhu Sundar"</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>git config --global user.email "abc@rst.xy"</cmd>. For example <cmd>git config --global user.email "sindhus@gnome.org"</cmd>.</p>
+      </item>
+    </steps>
+
+    <note style="tip">
+      <p>You also set the editor that will allow you to write commit messages. Type and run <cmd>git config --global core.editor EDITOR</cmd>, where EDITOR is any editor of your choice. For example <cmd>git config --global core.editor gedit</cmd> or <cmd>git config --global core.editor nano</cmd> and so on.</p>
+    </note>
+
+  </section>
+
+</page>

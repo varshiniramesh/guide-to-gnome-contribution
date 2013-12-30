@@ -1,0 +1,93 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="setup-pacman">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="install-devpkgs"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Setup the package manager</title>
+
+  <p>Software installation and management in a <app>Gnu/Linux</app> distribution is handled by the a package manager. To install more software on a system, you will have to interact with the package manager. <app>Bridge Linux</app> carries <app>Pacman</app> package manager. The following sections carry basic setup and usage instructions for <app>Pacman</app>.</p>
+
+  <note style="important">
+    <p><app>Bridge Linux</app> by default does not install all <app>GNOME</app> apps. You can get more <app>GNOME</app> by installing the <em>gnome-extra</em> package through <app>Pacman</app>.</p>
+  </note>
+
+  <section id="pacman-setup-update">
+      <title>Setup package manager</title>
+
+      <note style="important">
+        <p>The following steps are required before you try to install any software using <app>Pacman</app>.</p>
+      </note>
+
+      <steps>
+        <title>Update <app>Pacman</app></title>
+        <item>
+          <p><link href="help:gnome-help/gs-launch-applications">Launch</link> xterm.</p>
+        </item>
+        <item>
+          <p>Type <em>sudo pacman -Syy</em>, press <key>Enter</key>.</p>
+        </item>
+        <item>
+          <note style="tip">
+            <p>User and root password were set during the installation of your <app>Gnu/Linux</app> distribution.</p>
+          </note>
+          <p>Enter your user password.</p>
+        </item>
+      </steps>
+
+    <p>Once successfully completely updated, <app>Pacman</app> is now ready to install software you require.</p>
+
+  </section>
+
+  <section id="pacman-install">
+      <title>Install packages</title>
+
+      <steps>
+        <title>To install a software from <app>Pacman</app>:</title>
+        <item>
+          <p><link href="help:gnome-help/gs-launch-applications">Launch</link> xterm.</p>
+        </item>
+        <item>
+          <p>Type <em>sudo pacman -S </em> followed by the package name. For example, <em>sudo pacman -S gnome-extra</em>. Press <key>Enter</key>.</p>
+        </item>
+        <item>
+          <p>Enter your user password. Press <key>Enter</key>.</p>
+        </item>
+        <item>
+          <p>When asked to <em>Proceed with installation</em>, press <key>Enter</key>, as the default letter capitalized is <em>Y</em> indicating a <em>Yes</em>.</p>
+        </item>
+      </steps>
+  </section>
+
+  <section id="pacman-remove">
+      <title>Remove packages</title>
+
+      <steps>
+        <item>
+          <p><link href="help:gnome-help/gs-launch-applications">Launch</link> xterm.</p>
+        </item>
+        <item>
+          <p>Type <em>sudo pacman -R </em> followed by the package name. For example, <em>sudo pacman -R rhythmbox</em>.</p>
+        </item>
+        <item>
+          <p>Enter your user password. Press <key>Enter</key>.</p>
+        </item>
+        <item>
+          <p>When asked to confirm <em>to remove these packages</em>, press <key>Enter</key></p>
+        </item>
+      </steps>
+  </section>
+
+</page>

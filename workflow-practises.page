@@ -1,0 +1,44 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="workflow-practises">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="jhbuild-setup"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Sane workflow, Clean practises</title>
+
+  <p>These are a few pointers in keeping your workflow orderly thus, instinctive which means it will commands easy to recall.</p>
+
+  <section id="file-management">
+    <title>File management</title>
+
+    <p>To help visualize the directories on your computer clearly, you would need to keep your files and directories organized with self-explantory names. For example, I work on both three different projects viz, <app>KDE</app>, <app>Ruby on Rails</app> and of course <app>GNOME</app>. I store all source code under <var>~/code</var> directory with further organization of source code store in relevant project names.</p>
+
+    <code>
+    sindhu@arch ~/code % ls
+    blog  gnome  guides  kde  linux  other-src  ruby  tools
+    sindhu@arch ~/code % cd gnome 
+    sindhu@arch ~/code/gnome % ls
+    gedit  gitg  geary
+    </code>
+
+  </section>
+
+  <section id="git-workflow">
+    <title>Git workflow</title>
+
+    <p>TOWRITE</p>
+
+  </section>
+</page>

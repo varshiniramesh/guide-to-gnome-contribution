@@ -1,0 +1,276 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="jhbuild-setup">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="jhbuild-basics"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Setup <app>JHBuild</app></title>
+
+  <p><app>JHBuild</app> is a script that automates compilation of <app>GNOME</app> modules. Like any other software, you would have to install and configure <app>JHBuild</app> to work with other existing software on the distribution.</p>
+
+  <section id="install-jhbuild">
+    <title>Install <app>JHBuild</app></title>
+
+    <steps>
+      <item>
+        <p>Edit your shell's configuration file to add <var>:/home/$USER/.local/bin</var> to the <var>PATH</var> variable. If you are using the default <app>Bash</app> shell, then the configuration file is called <var>.bashrc</var> available in your home directory. To edit it, type and run <cmd>gedit ~/.bashrc</cmd>. Look for <var>PATH</var> value and append the specified value to the end. For example:</p>
+        <code>
+          export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
+          /bin:/usr/games:/usr/local/games:/home/$USER/.local/bin"
+        </code>
+      </item>
+      <item>
+        <p><em>git clone</em> source of <app>JHBuild</app> from <link href="htttp://git.gnome.org/jhbuild">git.gnome.org/jhbuild</link>. You should see similar terminal output:</p>
+        <code>
+          [user@bridgelinux ~]$ mkdir code
+          [user@bridgelinux ~]$ cd code/
+          [user@bridgelinux code]$ git clone git://git.gnome.org/jhbuild
+          Cloning into 'jhbuild'...
+          remote: Counting objects: 38000, done.
+          remote: Compressing objects: 100% (9656/9656), done.
+          remote: Total 38000 (delta 29367), reused 36648 (delta 28200)
+          Receiving objects: 100% (38000/38000), 7.54 MiB | 122.00 KiB/s, done.
+          Resolving deltas: 100% (29367/29367), done.
+          Checking connectivity... done.
+        </code>
+      </item>
+      <item>
+        <p>Type and run <cmd>cd jhbuild</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>./autogen.sh</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>make</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>make install</cmd></p>
+      </item>
+    </steps>
+
+    <p>The <app>JHBuild</app> binary would be installed into <var>~/.local/bin</var> directory.</p>
+
+  </section>
+
+  <section id="arch-python">
+    <title>Manage <app>Python</app> versions</title>
+
+    <note style="important">
+      <p>This section is essential to correctly compile software using <app>JHBuild</app>.</p>
+    </note>
+
+    <p>Due to some architectural decions made by maintainers and developers of <app>Arch Linux</app>, <app>Python 3.x</app> is the default version of <app>Python</app> on most <app>Arch Linux</app> based distributions. However, most applications still use <app>Python 2.x</app> and won't run if they are encounter the default <app>Python</app> to be of <var>3.x</var> version.</p>
+
+    <p>In order to give programs the <app>Python</app> version they require, we will setup a script that redirects programs to use different versions of <app>Python</app> as per their needs.</p>
+
+    <steps>
+      <item>
+        <p>Type and run <cmd>sudo rm /usr/bin/python /usr/bin/python-config</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>sudo gedit /usr/local/bin/python</cmd> and paste the following contents on to the file:</p>
+        <code>
+          #!/bin/bash
+          script=`readlink -f -- "$1"`
+          case "$script" in
+          /path/to/project1/*|/path/to/project2/*|/path/to/project3*)
+              exec python3 "$@"
+              ;;
+          esac
+
+          exec python2 "$@"
+        </code>
+        <p>This makes <app>Python 2.x</app> default system-wide but executes <app>Python 3.x</app> for specific paths. You can customize the paths according to your requirement.</p>
+      </item>
+      <item>
+        <p>Save the file and exit the editor.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>sudo chmod +x /usr/local/bin/python</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>sudo ln -s /usr/local/bin/python /usr/bin/python</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>sudo ln -s /usr/bin/python2.7-config /usr/bin/python-config</cmd>.</p>
+      </item>
+    </steps>
+
+    <p>The above commands using <app>ln</app> program create links to redirect any software requests for python to our script, which then decides depending on the list of projects found in the script if the software requires <app>Python 3.x</app> or the default <app>Python 2.x</app>.</p>
+
+    <note style="important">
+      <p>The links could be overwritten if you reinstall <app>Python</app> either <var>2.x</var> <var>3.x</var> through <app>Pacman</app>. You would recreate the symlinks, otherwise you would have <app>Python 3.x</app> as default.</p>
+    </note>
+  </section>
+
+  <section id="prep-jhbuild">
+    <title>Prepare system for <app>JHBuild</app></title>
+
+    <p><app>JHBuild</app> requires some <link xref="setup-devpkgs">development libraries</link> to compile software. We would know what exactly it requires by checking with it.</p>
+
+    <steps>
+      <item>
+        <p>Type and run <cmd>jhbuld sanitycheck</cmd>.</p>
+      </item>
+      <item>
+        <p>Type and run <cmd>jhbuild sysdeps</cmd></p>
+      </item>
+      <item>
+        <p>Both the above commands should return empty output. Should any of the command report that certain packages are missing, you can build the same through <app>JHbuild</app>.</p>
+      </item>
+    </steps>
+
+    <p>For example, <app>JHBuild</app> often reports that it is missing <app>WebKit</app> and <app>js24</app> packages, but these packages can be obtained by building them through jhbuild itself!</p>
+
+    <steps>
+      <item>
+        <p>Type and run <cmd>jhbuild build js24</cmd>.</p>
+      </item>
+      <item>
+        <note style="warning">
+          <p><app>WebKit</app> compilation is known to take 4 hours and plus on a Interl i5 processor, so if you have an older processor, please avoid compiling this module unless you absolutely need it.</p>
+        </note>
+        <p>Type and run <cmd>jhbuild build WebKit</cmd>.</p>
+      </item>
+    </steps>
+
+    <note style="important">
+      <p>You can skip the <cmd>sysdeps</cmd> check by adding <cmd>--nodeps</cmd> to your <cmd>jhbuild build</cmd> command.</p>
+    </note>
+  </section>
+
+  <section id="configure-jhbuild">
+    <title>Configure <app>JHBuild</app></title>
+
+    <p>Once you <link xhref="jhbuild-setup#install-jhbuild">installed <app>JHBuild</app></link>, you should configure it so it knows where to save downloaded source code on your computer, where to put binaries away from system's stable binaries and so on.</p>
+
+    <steps>
+      <item>
+        <p>If you are currently in the home directory, navigate to the <app>JHBuild</app> repository you cloned to. For example: if you cloned onto <var>~/code</var>, then <cmd>cd ~/code/jhbuild</cmd>. Now, type and run <cmd>cp examples/sample.jhbuildrc ~/.jhbuildrc</cmd>.</p>
+      </item>
+      <item>
+        <p>A <app>JHBuild</app> configuration file understands <app>PYTHON</app> syntax, it can be modified to suit your requirements. Explaining each of the options can make this document long, verbose and boring. To learn by example, read the following the configuration file with comments:</p>
+        <code>
+          # -*- mode: python -*-
+
+          # Here, 3.12 indicates the next stable release that is under works!
+          moduleset = 'gnome-world-3.12'
+
+          # Skip these modules as they are they take long to compile and
+          #I am not working on them!
+
+          skip = [
+          'iso-codes',
+          'gimp',
+          'hal',
+          'evolution-data-server','evolution',
+          'gnome-bluetooth',
+          'pulseaudio',
+          'bluez',
+          'ibus',
+          'ekiga',
+          'seed',
+          'speex',
+          'gdm',
+          'python-devel',
+          'python2-devel',
+          'wayland',
+          'xwayland',
+          'xf86-video-intel',
+          'brasero'
+          ]
+
+          # What directory should the source be saved to?
+          checkoutroot = os.path.expanduser('~/code/gnome')
+
+          # The location on the system to configure/install modules to
+          # (must have write access)
+          prefix = '/opt/gnome'
+
+          # Some system-wide arguments 
+          os.environ['CFLAGS'] = '-fno-omit-frame-pointer -g -O0 -fno-inline'
+          os.environ['PYTHON'] = '/usr/bin/python2'
+
+          # Do you have fast processor? If so, then this setting runs N
+          # number of threads simultaneously during a make decreasing 
+          # compile time. This is also known as "parallel build"
+          makeargs = '-j4'
+
+          # Branches to use for some modules
+          branches['glib'] = 'master'
+          branches['gtk+'] = 'master'
+          branches['pygobject'] = 'master'
+          branches['vala'] = 'master'
+          branches['gtkspell-3'] = 'http://hg.code.sf.net/p/gtkspell/code'
+
+          # Autogen arguments for some modules
+          module_autogenargs['gtk+'] = '--disable-wayland-backend'
+          module_autogenargs['glib'] = '--enable-debug=yes --enable-dtrace=no --enable-systemtap=yes --disable-visibility'
+          module_autogenargs['vte-3'] = '--enable-introspection'
+          module_autogenargs['clutter'] = '--disable-wayland-backend --enable-wayland-compositor=no'
+
+          # Modules requiring python3
+          module_extra_env['pygobject'] = {'PYTHON': 'python3'}
+          module_extra_env['gitg'] = {'PYTHON': 'python3'}
+          module_extra_env['libgit2-glib'] = {'PYTHON': 'python3'}
+          module_extra_env['libpeas'] = {'PYTHON':'python3'}
+          module_extra_env['rhythmbox'] = {'PYTHON' : 'python3'}
+          module_extra_env['gnome-music'] = {'PYTHON' : 'python3'}
+          module_extra_env['gedit'] = {'PYTHON' : 'python3'}
+
+          # Modules requiring python2
+          module_extra_env['goject-introspection'] = {'PYTHON' : 'python2'}
+          module_extra_env['tomboy'] = {'PYTHON' : 'python2'}
+          module_extra_env['gnome-terminal'] = {'PYTHON' : 'python2'}
+          module_extra_env['gnome-dictionary'] = {'PYTHON' : 'python2'}
+          module_extra_env['epiphany'] = {'PYTHON' : 'python2'}
+
+          # PATHs so that pkgconfig program is able to find libraries correctly
+          addpath('PKG_CONFIG_LIBDIR', '/usr/lib/pkgconfig')
+          addpath('PKG_CONFIG_PATH', '/opt/gnome/lib/pkgconfig')
+          addpath('PKG_CONFIG_PATH', '/usr/lib/pkgconfig')
+          addpath('LD_PRELOAD_PATH', '/opt/gnome/lib')
+          addpath('LD_LIBRARY_PATH', '/usr/lib')
+        </code>
+      </item>
+    </steps>
+
+    <p>Once you have saved your <var>~/.jhbuildrc</var>, you should be able to take it for a test run in the next section!.</p>
+  </section>
+
+  <section id="jhbuild-dirs">
+    <title><app>JHBuild</app> directories</title>
+
+    <p>Once we have <link xhref="jhbuild-setup#configure-jhbuild">configured <app>JHBuild</app></link>, we have to create the directories you specified in the configuration file.</p>
+
+    <list>
+      <item>
+        <p>To create directory which stores the downloaded source code. According to the above configuration file, it is specifies that source code be stored in <var>~/code/gnome</var>, if you have specified the same then, type and run <cmd>mkdir ~/code/gnome</cmd>.</p>
+      </item>
+      <item>
+        <p><app>JHBuild</app> requires another directory to store binaries and related libraries. This is recommended to be <var>/opt/gnome</var>. Directories under <var>/</var> are not writeable by users, hence you would have to:</p>
+        <steps>
+          <item>
+            <p>Type and run <cmd>sudo mkdir /opt/gnome</cmd>.</p>
+          </item>
+          <item>
+            <p>Type and run <cmd>sudo chmod -R 777 /opt/gnome</cmd></p>
+          </item>
+        </steps>
+      </item>
+    </list>
+
+  </section>
+</page>

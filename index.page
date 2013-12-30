@@ -1,0 +1,107 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="guide" id="index">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <title type="text">Dirige</title>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <desc>Guides for GNOME contribution.</desc>
+  </info>
+
+<!--<title>
+    <media type="image" mime="image/png" its:translate="no" src="figures/???.png" /> Guide to GNOME
+  </title> -->
+
+  <title>Introduction</title>
+
+  <p><app>GNOME</app> is a desktop software for GNU/Linux based operating systems that is freely available for anyone to modify. You can improve <app>GNOME</app> by contributing new ideas or manuals, artwork and solutions to existing problems. This requires some familiarity with a few related technical terms and software.</p>
+
+  <section id="assumptions">
+    <title>Who are you?</title>
+    <p>This guide assumes that you are:</p>
+
+    <list>
+      <item>
+        <p>an existing <app>Windows</app> or <app>OS X</app> user</p>
+        <p>and/or,</p>
+      </item>
+      <item>
+        <p>want to contribute to <app>GNOME</app> to compete for FOSS internships such as <link href="https://wiki.gnome.org/OutreachProgramForWomen">Outreach Program for Women</link> or <link href="https://wiki.gnome.org/SummerOfCode">Google Summer of Code</link>.</p>
+        <p>and/or,</p>
+      </item>
+      <item>
+        <p>want to gain software development skills in <app>GNOME</app>.</p>
+      </item>
+    </list>
+  </section>
+
+  <section id="requisite-skills">
+    <title>Do you know how to...</title>
+
+    <p>To be able to accomplish tasks in this tutorial, you should be familiar with the following tasks in your currently using operating system:</p>
+
+    <list>
+      <item><p>Browse the web in a web browser such as <app>Firefox</app>, <app>Opera</app>, <app>Internet Explorer</app> and so on.</p></item>
+      <item><p>Download a file by saving it from a webpage.</p></item>
+      <item><p>Install software.</p></item>
+      <item><p>Use a flash drive by plugging it in and browsing its contents on the computer.</p></item>
+      <item><p>Browse computer's storage locations when selecting a file to open.</p></item>
+      <item><p>Open and close programs.</p></item>
+      <item><p>Restart the computer.</p></item>
+    </list>
+  </section>
+
+  <section id="requisite-resources">
+    <title>You require...</title>
+
+    <p>This tutorial requires the following resources:</p>
+
+    <list>
+      <item><p>A flash drive with a minimum capacity of 2GB or more.</p></item>
+      <item><p>[Optional] Access to a internet connection.</p></item>
+    </list>
+
+  <note style="tip">
+    <p>If you have access to only a single computer at any given point of time, a physical copy of this tutorial on paper would be handy. Especially, during installation procedures, when you may not have access to internet.</p>
+  </note>
+
+  </section>
+
+  <section id="start-guide">
+    <title>Let's begin!</title>
+    <p>The following pages explain the concepts behind the tools and then impart instructions to acheive the tasks. Pages are arranged logically, start with the first step on every page. Clicking on <em>Next</em> will take you to the next step.</p>
+
+      <steps>
+        <item>
+          <p><link xref="get-gnome"></link></p>
+        </item>
+        <item>
+          <p><link xref="use-gnome"></link></p>
+        </item>
+        <item>
+          <p><link xref="bugs-bugzilla"></link>.</p>
+        </item>
+        <item>
+          <p><link xref="git-guide"></link></p>
+        </item>
+        <item>
+          <p><link xref="dev-env"></link></p>
+        </item>
+        <item>
+          <p><link xref="fix-bug"></link></p>
+        </item>
+        <item>
+          <p><link xref="upload_patch-irc-mailing_list">Communicate your contribution through bugzilla, IRC and mailing lists</link>.</p>
+        </item>
+      </steps>
+  </section>
+</page>

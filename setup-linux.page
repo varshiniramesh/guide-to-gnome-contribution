@@ -1,0 +1,27 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="setup-linux">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="setup-internet"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+    <title>Setup the <app>Gnu/Linux</app> distribution</title>
+
+    <p>To do software development, one requires a working internet connection. Interacting with the system to manage software is one of the basic knowledge in using a <app>Gnu/Linux</app> distribution. Both of these topics will be touched upon the upcoming pages.</p>
+
+    <steps>
+      <item><p><link xref="setup-internet"></link></p></item>
+      <item><p><link xref="setup-pacman"></link></p></item>
+      <item><p><link xref="install-devpkgs"></link></p></item>
+    </steps>
+</page>

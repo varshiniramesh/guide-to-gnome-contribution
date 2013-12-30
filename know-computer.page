@@ -1,0 +1,99 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="know-computer">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="prepare-space"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Know your computer</title>
+
+  <p>It's important to know what hardware your computer carries. This will help you to select appropriate software for it. The key components are:</p>
+
+    <table frame="all" rules="rows cols" shade="all">
+      <title>Table: System details</title>
+
+      <tr>
+        <td><p>Common name</p></td>
+        <td><p>Technical name</p></td>
+        <td><p>Details required</p></td>
+        <td><p>Example</p></td>
+      </tr>
+      <tr>
+        <td><p>Brand</p></td>
+        <td><p>Manufacturer</p></td>
+        <td><p>Apple or non-apple (assembled PC, branded PC and so on)</p></td>
+        <td>
+          <list>
+            <item><p>Apple macbook air</p></item>
+            <item><p>Assembled PC</p></item>
+            <item><p>HP Desktop</p></item>
+          </list>
+        </td>
+      </tr>
+      <tr>
+        <td><p>Architecture</p></td>
+        <td><p>Architecture</p></td>
+        <td><p>Processor name and type</p></td>
+        <td><p>Intel i3 processor 64-bit</p></td>
+      </tr>
+      <tr>
+        <td><p>Main memory</p></td>
+        <td><p>RAM</p></td>
+        <td><p>Capacity</p></td>
+        <td><p>2GB</p></td>
+      </tr>
+      <tr>
+        <td><p>Display</p></td>
+        <td><p>Graphics card</p></td>
+        <td><p>Model name and number</p></td>
+        <td><p>Intel Graphics Controller</p></td>
+      </tr>
+      <tr>
+        <td><p>Network card</p></td>
+        <td><p>Wifi or Ethernet chip</p></td>
+        <td><p>Model name and number</p></td>
+        <td><p>Broadcom Corporation BCM43224</p></td>
+      </tr>
+      <tr>
+        <td><p>Storage</p></td>
+        <td><p>Hard disk drive (HDD) or Solid state drive (SSD)</p></td>
+        <td><p>Capacity</p></td>
+        <td>
+          <list>
+            <item><p>120GB SSD</p></item>
+            <item><p>250GB HDD</p></item>
+          </list>
+        </td>
+      </tr>
+    </table>
+
+  <section id="hardware-info">
+    <title>Getting hardware information</title>
+
+    <p>Harware information for your computer can be obtained from your existing operating system.</p>
+
+    <steps>
+      <title></title>
+      <item>
+        <p>For <app>Windows</app> operating systems: Select the desktop icon <guiseq><gui>My Computer</gui><gui style="menu">Properties</gui><gui style="tab">System</gui></guiseq>.</p>
+<!--TOWRITE:
+        <p>For <app>OS X</app> operating system: </p> -->
+      </item>
+      <item>
+        <p>Note down the information as asked in <em>Table: System details</em>.</p>
+      </item>
+    </steps>
+  </section>
+
+</page>

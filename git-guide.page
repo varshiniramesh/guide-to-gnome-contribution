@@ -1,0 +1,32 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="git-guide">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="source-binary"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+    <title>Learn <app>Git</app></title>
+
+    <p>FOSS encourages creation and use of FOSS software. So FOSS projects inturn use and depend on may other FOSS projects. A FOSS project is a collaborative effort from people spread throughout the world. People who make create and make changes to the source of a software are often geographically distant from each other.</p>
+
+    <p>Conflicts arise when many people are trying to make changes to the same source files at the same time. Each change made to the source files of a software has both expected and unexpected side-effects and consequences that could affect other projects depending on that particular software.</p>
+
+    <p>To understand why we need a system to track changes, we also need to understand <em>what</em> we need to track. The following tutorial pages will lead you into a gradual understanding of software source, binaries and tracking changes in a software source.</p>
+
+    <steps>
+      <item><p><link xref="source-binary"></link></p></item>
+      <item><p><link xref="cmd-basics"></link></p></item>
+      <item><p><link xref="git-setup"></link></p></item>
+      <item><p><link xref="git-basics"></link></p></item>
+    </steps>
+</page>

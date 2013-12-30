@@ -1,0 +1,32 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="jhbuild-guide">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="workflow-practises"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+    <title>Learn <app>JHBuild</app></title>
+
+    <p>In order for software to be made into binaries usable by people like us, it has to be <em>released</em> by software developers. A release is a compressed file of source code that contains software changes (that is, commits) since previous release. Each release is given a incremental number that is known as the <em>Version</em> of the software. FOSS releases are done in regular intervals of time. These intervals vary according to each project. For example, <app>GNOME</app> releases a new version every six months.</p>
+
+    <p>Because each project has a different release cycle, because each project may depend on another project for some code, this will result in verrsion incompatibility if you are trying to compile a software source of a project that requires a newer version of a software than what is installed on your system.</p>
+
+    <p>A drawback of running software from source is that source that is under heavy development (that is, constant changes) is prone to constant failures too because it is largely untested due to the frequent changes. If you ran all software compiled from source then it is likely your distribution may be unusable due to frequent crashes, errors and other unforseen side effects. Thus it is important to keep your software source that is under development separate from your daily use software.</p>
+
+    <steps>
+      <item><p><link xref="workflow-practises"></link></p></item>
+      <item><p><link xref="jhbuild-setup"></link></p></item>
+      <item><p><link xref="jhbuild-basics"></link></p></item>
+      <item><p><link xref="jhbuild-maintenance"></link></p></item>
+    </steps>
+</page>

@@ -1,0 +1,83 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="cmd-basics">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="git-setup"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Commandline and the terminal</title>
+
+  <p>There are two modes to using any software: commandline and Graphical User Interface (GUI).</p>
+
+  <p>Commandline software are those that are to be interacted with command issued in a terminal. A terminal is a program that awaits your instructions. The blinking cursor at a terminal is a called a <em>Prompt</em>. GUI programs are those that you can interact with using a mouse pointer and the keyboard. A program that offers a GUI will provide you with buttons, text typing fields, drop down lists and so on. You needn't have to remember commands.</p>
+
+  <section id="software-stack">
+    <title>Heirarchy of software</title>
+
+    <p>Software on any system, be it a website, a distribution or a server is in the form of a <em>Stack</em>. Stack is a form where things are piled on top of each other. In a distribution the kernel is at the very bottom of the software stack, without which all softwares on top of it would simple fall! So on top of kernel lies a few system software, the terminal, the desktop environment such as <app>GNOME</app>, upon which are applications such as the editor, the music player, the file browser, the web browser and so on.</p>
+
+    <p>The desktop environment is started by the distribution by running a command in a shell. A shell is a terminal environment that comes inbuild with every <app>Gnu/Linux</app> operating system. You can perfom the same tasks on a computer via the shell that you can do via the desktop environment because, shell is commandline and the desktop environment is a GUI which offers you same features but with clickable buttons.</p>
+
+   <note style="tip">
+      <p>To see a shell, press <keyseq><key>Ctrl</key><key>Alt</key><key>F2</key></keyseq>. To go back to your desktop environment press <keyseq><key>Ctrl</key><key>Alt</key><key>F1</key></keyseq>.</p>
+   </note>
+  </section>
+
+  <section id="same-shell-desktop">
+    <title>Terminal can do the same things as the desktop!</title>
+  
+    <p>Here is an exercise to help you see how a terminal can do the same things that a desktop environment can do:</p>
+
+    <steps>
+      <item>
+        <p>Run the <link href="">file browser</link>, the default location will be your home directory.</p>
+      </item>
+      <item>
+        <p>Run the terminal such as <app>GNOME</app> <app>Terminal</app> or <app>xterm</app>, the default location in the terminal will be your home directory. To check type and run <cmd>pwd</cmd>. The command is an abbreviation for <em>Present Working Directory</em>. It should return <em>/home/xxx</em>, where xxx is your username. If you are not in the home directory switch to it by typing and running <em>cd ~</em>. The character <em>~</em> automatically changes to your home directory.</p>
+      </item>
+      <item>
+        <p>In the terminal, type and run <cmd>touch hello_world</cmd>. This creates an empty file in your home directory.</p>
+      </item>
+      <item>
+        <p>View the file browser, you should see that the file you created via the terminal is now listed in your file browser as well.</p>
+      </item>
+    </steps>
+
+    <p>The files and directiories you create, delete or edit by issuing a commandline command are the same as creating, deleting or editing them via a GUI application. You are working on the same resource but either through commandline commands or through GUI.</p>
+  </section>
+
+  <section id="git-terminal-commands">
+    <title>Git commands and <app>Gnu/Linux</app> commands</title>
+
+    <p>When interacting with the commandline, you will issuing many commands. Its important to know where you can issue them and where you cannot and why! The distribution software stack reminds us that from the bottom, there is shell and then there are desktop and related applications. We interact with the shell using a desktop application called a <em>terminal</em>. So the commands such as <cmd>dmesg</cmd>, <cmd>lspci</cmd>, <cmd>touch</cmd>, <cmd>mkdir</cmd> and so on.</p>
+
+    <p><app>Git</app> is commandline software which means you interact with <app>Git</app> by issuing some commands. For example: <cmd>git log</cmd>, <cmd>git status</cmd> and so on. Here are somethings to remember about <app>Git</app> and <app>Gnu/Linux</app> commands:</p>
+
+    <list>
+      <item>
+        <p>You can use  <app>Gnu/Linux</app> commands on any <app>Gnu/Linux</app> distribution.</p>
+      </item>
+      <item>
+        <p>You can use <app>Git</app> commands on a distribution only when you have installed <app>Git</app> <em>and</em> <em>only</em> within a directory that <app>Git</app> is tracking changes for.</p>
+      </item>
+      <item>
+        <p><app>Git</app> commands start with the prefix <cmd>git</cmd>.</p>
+      </item>
+      <item>
+        <p>You can run all <app>Gnu/Linux</app> commands within a directory <app>Git</app> is tracking.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

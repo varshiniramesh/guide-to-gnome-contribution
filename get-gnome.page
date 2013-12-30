@@ -1,0 +1,30 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="get-gnome">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="know-computer"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+    <title>Get <app>GNOME</app> Desktop on your computer</title>
+
+    <p><app>GNOME</app> can be installed on a variety of <app>GNU/Linux</app> based operating systems called <em>distributions</em>. To get <app>GNOME</app> on your computer:</p>
+
+    <steps>
+      <item><p><link xref="know-computer"></link></p></item>
+      <item><p><link xref="prepare-space"></link></p></item>
+      <item><p><link xref="download-linux"></link></p></item>
+      <item><p><link xref="install-linux"></link></p></item>
+      <item><p><link xref="setup-linux"></link></p></item>
+
+    </steps>
+</page>

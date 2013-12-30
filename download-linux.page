@@ -1,0 +1,92 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="download-linux">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="install-linux"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Download a <app>GNU/Linux</app> operating system</title>
+
+  <p><app>GNU/Linux</app> is a kernel. A kernel is a software that connects and manages hardware to make possible the use of application software. A <app>GNU/Linux</app> based operating system along with a software packaging system is called a <em>Distribution</em>, it comes pre-packaged with various software that simplifies installation and usage. To know the various distributions available, you can browse <link href="http://distrowatch.com">Distrowatch</link> website.</p>
+
+  <section id="why-arch">
+    <title>Recommended distributions</title>
+
+    <p><app>Arch Linux</app> is a <app>Linux</app> based distribution that is considered minimal and it follows the rolling release model. Many other distributions have been based off it, giving users more options and ease of installation. Even though <app>GNOME</app> software development is possible on almost all <app>GNU/Linux</app> distributions, this tutorial recommends that you download any of the following <app>Arch Linux</app> based distributions:</p>
+
+    <note style="important">
+      <p>To know which disk image is most suitable for your computer, consult <link xref="know-computer"></link>.</p>
+    </note>
+
+    <table frame="all" rules="rows cols">
+      <title>Table: Recommended distributions for this tutorial</title>
+      <tr>
+        <td><p>Distribution Name</p></td>
+        <td><p>Download page</p></td>
+        <td><p>Comment</p></td>
+      </tr>
+      <tr>
+        <td><p><app>Bridge</app></p></td>
+        <td><p><link href="http://millertechnologies.net/downloads.html">http://millertechnologies.net/downloads.html</link></p></td>
+        <td><p>This distribution offers disk images that install the latest <app>GNOME</app> desktop.</p></td>
+      </tr>
+      <tr>
+        <td><p><app>Antergos</app></p></td>
+        <td><p><link href="http://antergos.com/try-it/">http://antergos.com/try-it/</link></p></td>
+        <td><p>TOWRITE</p></td>
+      </tr>
+    </table>
+
+  </section>
+
+  <section id="no-ubuntu">
+    <title>Can I install <app>Ubuntu</app>?</title>
+
+    <p>Popular distributions have not been recommended in this tutorial. Further more, even distributions that do carry <app>GNOME</app> desktop by default have not been recommended too. The following table reasons why:</p>
+
+    <table frame="all" rules="rows cols">
+      <title>Table: Reasons why popular distributions have not been recommended</title>
+      <tr>
+        <td><p>Distribution Name</p></td>
+        <td><p>Current Stable Release Number</p></td>
+        <td><p>Carries GNOME? If Yes, Version?</p></td>
+        <td><p>Details</p></td>
+      </tr>
+      <tr>
+        <td><p><app>Ubuntu</app></p></td>
+        <td><p>13.10</p></td>
+        <td><p>No</p></td>
+        <td><p>It's default desktop is <app>Unity</app>.</p></td>
+      </tr>
+      <tr>
+        <td><p><app>LinuxMint</app></p></td>
+        <td><p>15</p></td>
+        <td><p>No</p></td>
+        <td><p>Disk images that carry <app>GNOME</app> desktop are not available.</p></td>
+      </tr>
+      <tr>
+        <td><p><app>Fedora</app></p></td>
+        <td><p>18</p></td>
+        <td><p>Yes, 3.8</p></td>
+        <td><p>3.10 is the latest release of <app>GNOME</app>.</p></td>
+      </tr>
+    </table>
+
+    <note style="important">
+      <p>It is recommended you <em>do not</em> install any non-stable distributions, even if you found the latest version of <app>GNOME</app> in it. Non-stable distributions can also be referred to as <em>preview</em>, <em>pre-release</em>, <em>release candidate (RC)</em>. These would be still largely untested whereas stable builds are meant for daily usage. Test builds are indicated with odd version numbers.</p>
+    </note>
+
+</section>
+
+</page>

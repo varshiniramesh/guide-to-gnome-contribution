@@ -1,0 +1,85 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="git-basics">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="jhbuild-guide"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Basics of <app>Git</app></title>
+
+  <p>These are the concepts and commands you would need understand in order to use <app>Git</app>. Explaining all of them in detail will make this document long and verbose, hence for an indepth knowledge, please consult the <link href="http://git-scm.com/book/en/Git-Basics">Git Basics on git-scm.org</link>. The following sections will present an overview of the commands you are required to know to use <app>Git</app>.</p>
+
+  <section id="concepts">
+    <title><app>Git</app> basic commands</title>
+
+    <list>
+      <item>
+        <p>To download any git repository, type and run <cmd>git clone URL</cmd>, where URL is the address of the <app>Git</app> repository. It can vary depending on the project. For example, <cmd>git clone git://git.gnome.org/gedit</cmd> or <cmd>git clone https://git.gnome.org/bijiben</cmd> and so on.</p>
+      </item>
+      <item>
+        <p><app>Git</app> tracks and records changes to files and directories. If you have a local directory for which you wish to have <app>Git</app> track and record changes, then the first <em>one time</em> step is to initalize <app>Git</app>. Type and run <cmd>git init</cmd>.</p>
+        <note style="important">
+          <p>You won't need to run <cmd>git init</cmd> on a <app>Git</app> repository downloaded from the internet because they are already set to be tracked by <app>Git</app>.</p>
+        </note>
+      </item>
+      <item>
+        <p>To review changes you have made in a directory that is being tracked by <app>Git</app>, type and run <cmd>git status</cmd>. To see the difference between original files and the changes you have made to them, type and run <cmd>git diff</cmd>.</p>
+      </item>
+      <item>
+        <p>Recording a change in <app>Git</app> is a two step process:</p>
+        <steps>
+          <item>
+            <list>
+              <item>
+                <p>If you have added only a few new files, then type and run <cmd>git add </cmd>followed by the names of the newly added files.</p>
+              </item>
+              <item>
+                <p>If you have modified existing files <em>only</em>, then type and run <cmd>git add -u</cmd>.</p>
+              </item>
+              <item>
+                <p>If you have added many new files, modified/deleted existing files <em>and</em> are sure that there are no compiled files in the directory, then type and run <cmd>git add --all</cmd>.</p>
+              </item>
+            </list>
+          </item>
+          <item>
+            <p>Once the changed files have been added to <app>Git</app>, you can <em>commit</em> these changes. Type and run <cmd>git commit</cmd>. This will open an editor and wait for you to type a commit message. Type in a one line or multi-line summary about the changes made, save and exit the editor.</p>
+          </item>
+        </steps>
+      </item>
+      <item>
+        <p>To view a brief log of commits, type and run <cmd>git log</cmd>. You can also use <cmd>git log -p</cmd> to see full changes associated with each commit.</p>
+      </item>
+    </list>
+
+  </section>
+
+  <section id="git-undo">
+    <title>Undo changes in <app>Git</app></title>
+
+    <p>New software means that we often make mistakes and starting over is the only way that will help us think clearly about what we are trying to accomplish. If you have feel you have not performed a commit correcty or for any reason want to discard your local work, the following commands will help you undo your changes on your computer:</p>
+
+    <list>
+      <item>
+        <p>If you want to undo the last commit, that is remove the commit from the log but keep the changes, type and run <cmd>git reset --soft HEAD</cmd>.</p>
+      </item>
+      <item>
+        <p>If you want to undo the last commit <em>and</em> discard all local changes, that is revert files to their original status, type and run <cmd>git reset --hard HEAD</cmd>.</p>
+      </item>
+      <item>
+        <p>If you want to discard more than one commit then type and run <cmd>git reset --hard/soft HEAD~N</cmd>, where you should only use either <var>--hard</var> or <var>--soft</var> and replace <var>N</var> with a positive number. For example, <cmd>git reset --soft HEAD~2</cmd>, will remove last two commits but keep changes those commits brought in.</p>
+      </item>
+    </list>
+
+  </section>
+</page>

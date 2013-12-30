@@ -1,0 +1,61 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="use-gnome">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="setup-linux"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+    <title>Use <app>GNOME</app> desktop!</title>
+
+    <p>Whether you want to use <app>GNOME</app> desktop to compete for a Free and Open Source (FOSS) project internship or simply contribute your time to a FOSS project voluntarily or are curious about it -- to know a software, you have to use it first. Learning to use a new software can be intimidating -- a feeling that only lessens when you use the software as often as you can. Here are some resources and ideas to become comfortable with <app>GNOME</app>.</p>
+
+    <section id="gnome-help">
+      <title>User help</title>
+
+      <p><app>GNOME</app> includes extensive user manuals with its applications. You can access this either on your <app>GNOME</app> desktop or from the web.</p>
+
+      <terms>
+        <item>
+          <title>Desktop Help</title>
+          <p>To access help instructions, Press <key>F1</key> in <app>GNOME</app> desktop to open the <app>Desktop Help</app> browser.</p>
+        </item>
+        <item>
+          <title>help.gnome.org</title>
+          <p>The help instuctions available through <app>Desktop Help</app> are available on the web too. Consult <link href="help:gnome-help/gs-browse-web">Browse the web</link> to open <link href="http://help.gnome.org">help.gnome.org</link>.</p>
+        </item>
+      </terms>
+    </section>
+
+
+    <section id="gnome-favorites">
+      <title>Find your favorite application!</title>
+
+      <p>A favorite application is the one that you enjoy using, one that has features that are useful to you. It can be the music player -- <app>Music</app>, the weather application -- <app>Weather</app>, the maps application -- <app>Maps</app>, the instant messenger -- <app>Empathy</app> and so on. Learn how to <link href="help:gnome-help/gs-launch-applications">Launch applications</link> on your <app>GNOME</app> desktop.</p>
+    </section>
+
+    <section id="gnome-default">
+      <title>Use <app>GNOME</app> for your computing needs</title>
+
+    <note style="important">
+      <p>Certain applications although installable on any <app>Gnu/Linux</app> distribution, are not managed by <app>GNOME</app>. For example: independent FOSS projects such as <app>Libreoffice</app>, <app>Ecllipse</app>, <app>Codeblocks</app> and also applications that are a part of another desktop software, such as <app>KDE</app> (<app>Konqueror</app>, <app>Kate</app>), <app>Mate</app> and so on.</p>
+
+      <p>These projects have their own communities and you can learn about contributing to them through their resources. Their development process may be different and procedures are independent of <app>GNOME</app>.
+      </p>
+    </note>
+
+      <p>To become comfortable with <app>GNOME</app> quickly, try using it as a subsitute for your daily computing needs. The idea is to to setup and use <app>GNOME</app> apps in your routine work. For example, if you previously used <app>Windows</app> to send e-mails, now try to use <link href="help:evolution/intro-application">Use <app>Evolution</app></link> for doing the same.</p>
+
+    </section>
+
+</page>

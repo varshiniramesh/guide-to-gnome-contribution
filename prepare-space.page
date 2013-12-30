@@ -1,0 +1,159 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="prepare-space">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="download-linux"/>
+    <link type="seealso" xref="know-computer"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+    
+  </info>
+
+  <title>Prepare your computer space</title
+>
+  <p>If you are already using an operating system on your computer, this means that your computer's storage has been divided to accomodate both the operating system and your data. You may or may not have free space in your computer's storage device. To install a new operating system, you will have to free up some space. The act of freeing up space by dividing your computer's storage is called <em>Partitioning</em>. There are many softwaresc available to partition your storage device. However, <app>gParted</app> software is recommended and will be used to explain the paritioning process. </p>
+
+  <section id="download-write-disk_image">
+    <title>Use <app>Unetbootin</app> to write a disk image</title>
+
+    <p>In this tutorial, you will be required to download disk images to perform the tasks of partioning your storage and to install any <app>GNU/Linux</app> based operating system. To use a disk image, it must be written to an external installation medium such as a flash drive, also referred as a pendrive, thumb drive and so on. To write a disk image to a flash drive, you will require another software, prescribed here is <app>Unetbootin</app> as it is supported on both <app>Windows</app> and <app>OS X</app>.</p>
+
+  <note style="important">
+    <p>Disk images can be of different formats. Disk images asked to be downloaded in this tutorial are available in the <app>ISO</app> format.</p>
+  </note>
+
+    <note style="important">
+      <p>It is recommended you use a flash drive whose mimimum capacity is 2GB or more.</p>
+    </note>
+    <steps>
+      <item>
+        <p><link href="http://unetbootin.sourceforge.net/">Download <app>Unetbootin</app></link> software for your existing operating system and install it.</p>
+        <note style="tip">
+          <p>If you require assistance in installing this software, refer to the <link href="http://unetbootin.sourceforge.net/#install"> installation instructions</link> on their website.</p>
+        </note>
+      </item>
+      <item>
+        <p>Start <app>Unetbootin</app>.</p>
+      </item>
+      <item>
+        <p>Select <gui style="radio">Diskimage</gui>. Select <gui style="button">...</gui> to browse to the location of the disk image. Select <gui style="button">Open</gui>.</p>
+      </item>
+      <item>
+        <p>Usually, the <gui style="menu">drive</gui> is automatically detected once you have plugged in your flash drive to your computer. If not, select from the list manually.</p>
+      </item>
+      <item>
+        <p>Select <gui style="button">OK</gui> to write the disk image to your flash drive.</p>
+      </item>
+      <item>
+        <p>Once <app>Unetbootin</app> reports that the disk has been successfully written to the flash drive, select <gui style="button">Exit</gui> to close the program.</p>
+      </item>
+    </steps>
+  </section>
+
+  <section id="boot-gparted">
+    <title>Start computer with <app>gParted</app></title>
+
+    <steps>
+      <item>
+        <p><app>gParted</app> software is available as a disk image of the type <em>iso</em>. Currently, it is a 175.1 MB size file. <link href="http://sourceforge.net/projects/gparted/files/gparted-live-stable/0.16.2-11/">Download the disk image</link> suitable to your computer architecture and processor type.</p>
+      </item>
+      <item>
+        <p><link xref="prepare-space#download-write-disk_image">Write the <app>gParted</app> disk image</link> on to a flash drive.</p>
+      </item>
+      <item>
+        <p>Close <app>Unetbootin</app>. Leaving your flash drive plugged in, restart your computer.</p>
+      </item>
+      <item>
+        <p>You should be able to access the settings to specify that the computer must use the flash drive to start, in the following ways:</p>
+        <p>For non-apple computers:</p>
+        <steps>
+          <item>
+            <p>The commonly set keys to access the hardware settings are <key>F2</key>, <key>F8</key> or <key>F12</key>. Look for instructions that appear on your computer screen as it starts up.</p>
+          </item>
+          <item>
+            <p>Set your flash drive to be used when the computer starts up. Each computer could use a different settings layout and hence it is recommended you look for the term <em>boot order</em> and explore the menu associated with it. Instructions on how to navigate these menus and selecting/saving settings are usually mentioned in the same screen.</p>
+          </item>
+          <item>
+            <p>Save the settings to restart the computer.</p>
+          </item>
+        </steps>
+        <p>For apple computers:</p>
+        <steps>
+          <item>
+            <p>Press and hold left hand side <key>Alt</key> on your keyboard.</p>
+          </item>
+          <item>
+            <p>You will be presented with a screen that will let you select between your existing operating systems and your installation medium. To navigate between these options, use your keyboard's arrow keys. Select the flash drive and press <key>Enter</key>.</p>
+          </item>
+        </steps>
+      </item>
+    </steps>
+
+    <p>Once you have set the computer to start from the flash drive, it will automatically run the <app>gParted</app> disk image.</p>
+
+  </section>
+
+  <section id="know-partitions">
+    <title>Know your disk space</title>
+
+    <p><app>gParted</app> disk image will automatically run the <app>gParted</app> software presenting a graphical representation of how your computer's storage space has been allocated. Your computer's divided space indicated by blocks of squares are called <em>Partitions</em> and contain your operating system, data and so on. Free space on any parition is indicated with white color.</p>
+
+    <p>You can know the partitions of your existing operating system by looking at the column, <gui>type</gui>. <app>Windows</app> partions are either of the type <app>FAT32</app> or <app>NTFS</app>. OS X paritions are of the type <app>HFS+</app>.</p>
+
+    <p>To install a <app>GNU/Linux</app> operating system, you will require:</p>
+
+    <terms>
+      <item>
+        <title>Root partition</title>
+        <p>This partition will contain actual <app>GNU/Linux</app> kernel and <app>GNOME</app> software. It is recommended that you allocate at least 15 GB of disk space.</p>
+      </item>
+      <item>
+        <title>Swap partition</title>
+        <p>Swap is temporary storage and is required if your computer has small capacity in its main memory hardware. It is recommended that you allocate at least 2GB or twice the capacity of main memory, whichever is greater.</p>
+      </item>
+      <item>
+        <title>Home partition</title>
+        <p>In <app>GNU/Linux</app> operating systems, a user's files and data are stored on his/her Home folder. The Home folder is created on a separate parition so that in the event of a reinstall of the <app>GNU/Linux</app> operating system, the data is separate from the system files. Thus, protecting your personal files from being erased or overwritten unless you explicitly chose to do so.</p>
+        <note style="important">
+          <p>To undertake <app>GNOME</app> software development, you will be downloading source code of many software and this can require as much as 10GB disk space. It is recommended that you allocate at least 15GB of disk space.</p>
+        </note>
+      </item>
+    </terms>
+  </section>
+
+  <section id="parition-disk">
+    <title>Partition your disk space</title>
+
+    <p>The following screencast will show you how to parition your disk space to create root, swap and home paritions required for a <app>GNU/Linux</app> installation:</p>
+
+    <note style="tip">
+      <p>A computer that has more than one installed operating system in it is referred to as a machine that <em>Dual boots</em>. The act of starting such a computer is called <em>Dual booting</em>.</p>
+    </note>
+
+    <note style="warning">
+      <p>To keep your existing operating systems, <em>do not delete</em> your existing <app>NTFS</app> or <app>HFS+</app> paritions. You may only modify by resizing them to create free space.</p>
+    </note>
+
+    <note style="important">
+      <p><app>gParted</app> requires disk spaces to be input Megabytes (MB). To calculate your disk space in MB, multiple <em>n</em> GB with 1024, where <em>n</em> is the number of Gigabytes of space you wish to allocate. For example, to convert 10GB space into its MB equivalent, multiply 10 x 1024, which results in 10240 MB. It would be handy to keep a calculator at the time of paritioning your disk!</p>
+    </note>
+
+    <p>The following screencast shows you to create new paritions for root, swap and home. Towards the end it allows show you how to resize a parition.</p>
+
+    <media type="video" src="screencasts/gparted-partitioning.ogv" width="650px" height="500px"/>
+
+
+    <note style="important">
+      <p>Note down the names of the parition from the <gui>Partition</gui> column. For example, <em>/dev/sda1</em> is the parition is to be used as root. This information is essential for installation.</p>
+    </note>
+  </section>
+
+</page>

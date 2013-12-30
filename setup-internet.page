@@ -1,0 +1,174 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="setup-internet">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="setup-pacman"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Setup an internet connection</title>
+
+  <p>To setup an internet connection on a <app>Gnu/Linux</app> distribution, the following layers of software need to work in sync with each other. To access the internet, you require:</p>
+
+  <list type="numbered">
+    <item>
+      <p>A network hardware within your computer.</p>
+    </item>
+    <item>
+      <p>A kernel module, a software that enables your network hardware.</p>
+    </item>
+    <item>
+      <p>An external hardware device capable of connecting to your Internet Service Provider (ISP) such as a smartphone, a data card, a router and/or modem.</p>
+    </item>
+    <item>
+      <p>A network manager, a software that detects wireless networks and/or wired connections.</p>
+    </item>
+    <item>
+      <p>(Optional) If you do not have direct access to internet, then you will require proxy settings made available by your organization to access internet through their servers.</p>
+    </item>
+  </list>
+
+  <p>An <app>Arch Linux</app> based distribution that comes carries <app>GNOME</app> desktop also carries a network manager software. However, it may or may not have loaded the right kernel module to enable your computer's network hardware. Here are few segments to guide you:</p>
+
+  <section id="network-hardware">
+    <title>Manage network hardware</title>
+
+    <p>A computer that is capable of connecting to any other local or remotely located computer, will have a hardware that is referred to generally as the <em>network hardware</em>. The kernel module is the software that directly interacts with this network hardware. Observed is that most network hardware are now supported readily on <app>Gnu/Linux</app> kernel since 3.x.</p>
+
+    <note style="important">
+      <p>You can use any terminal software to run the commands mentioned here. Example: <app>xterm</app>, <app>GNOME Terminal</app>, <app>Terminator</app>, <app>Guake</app> and so on. To run any command, press <key>Enter</key>.</p>
+    </note>
+
+    <steps>
+      <title>Enable network hardware</title>
+      <item>
+        <p>In a terminal, type and run <cmd>rfkill list</cmd>.</p>
+      </item>
+    </steps>
+
+    <p>A soft block indicates that the hardware has been disabled from being accessed through a software. A hard block indicates that the hardware has been disabled from access by some physical means. For example, in most laptops, there would be a button or a combination of keys you can press to enable the wireless hardware. Look for the key with the wifi symbol in the row of function keys (<key>F1</key> to <key>F12</key>). You can access it either by pressing the key alone or in combination with <key>Fn</key>.</p>
+
+    <steps>
+      <title>Obtain hardware information</title>
+      <item>
+        <note style="tip">
+          <p>To filter results in a commandline command, add <em>| grep</em> followed by search term within double quotes. For example, <em>lspci | grep "Network"</em>. Note that <app>Grep</app> is by default case sensitive.</p>
+        </note>
+        <p>In a terminal, type and run <cmd>lspci</cmd>.</p>
+      </item>
+      <item>
+        <p>Note down the output line that contain information about your network hardware. This line often contains the words <em>Network</em> and/or <em>Ethernet</em>. Sample output: <em>02:00.0 Network controller: Broadcom Corporation BCM4331 802.11a/b/g/n (rev 02)</em>.</p>
+      </item>
+    </steps>
+
+    <p>As hardware is connected to your computer, the <app>Gnu/Linux</app> kernel recognizes it and tries to automatically load the related modules. Any success or failure at this point should be indicated in the output of the <app>dmesg</app> command</p>.
+    <steps>
+      <title>Watch for hardware information</title>
+      <item>
+        <note style="tip">
+          <p>Use <app>grep</app> to filter the output for results that you are interested in.</p>
+        </note>
+        <p>Type and run <cmd>dmesg</cmd>.</p>
+      </item>
+    </steps>
+
+    <p>Whilst enabling your network hardware, you may require to reload a kernel module. The commands are:</p>
+
+    <steps>
+      <item>
+        <note style="tip">
+          <p>If the output is too large to scroll, you can contain it to one screen and browse page by page by suffixing <em>| less</em> to the command. For example, <em>lsmod | less</em>.</p>
+        </note>
+        <p>To list all loaded kernel modules, type and run <cmd>lsmod</cmd>.</p>
+      </item>
+      <item>
+        <p>To load a kernel module, type and run <cmd>sudo modprobe </cmd> followed by the name of the kernel module. For example, <cmd>sudo modprobe brcsmac</cmd>.</p>
+      </item>
+      <item>
+        <p>To remove a loaded kernel module, type and run <cmd>sudo rmmod </cmd> followed by the name of the kernel module. For example, <cmd>sudo rmmod brcmsmac</cmd>.</p>
+      </item>
+    </steps>
+  </section>
+
+  <section id="properitary-hardware">
+    <title>Network hardware that require proprietary firmware</title>
+
+    <p>Despite ever improving hardware support in the <app>Gnu/Linux</app> kernel, some network hardware are properitary and will only work when the required software are installed. This software is called <em>Firmware</em>. However, it is a handicap to obtain a software from the internet when one is unable to connect to the internet in the first place! Here are some ideas to resolve such a situation:</p>
+
+    <list>
+      <item>
+        <p>Seek computer access in your instituition, a library or even a friend. Browse for the proprietary firmware. The proprietary firmware is often offered in both online installation and offline installation packages. You can get the offline installation package and save it on to a flash drive.</p>
+      </item>
+      <item>
+        <p>Until you are comfortable to use a <app>Gnu/Linux</app> distribution as your default operating system, it is a good idea to keep your regular operating system for scenarios when you are short of time and are unable to perform a task on <app>Gnu/Linux</app> So the quickiest way to get work done would be on your regular system!</p>
+      </item>
+      <item>
+        <p>Keep a <link xref="install-linux">flash drive written with a <app>Gnu/Linux</app> distribution</link> on it. Often distributions have default configuration which makes Internet access readily available.</p>
+      </item>
+    </list>
+  </section>
+
+  <section id="internet-hardware">
+    <title>Manage internet device</title>
+
+    <p>Once the <link xref="setup-internet#network-hardware">network hardware on your computer is enabled</link> with relevant kernel module loaded, further steps differ on what kind of device you are using to connect to the internet. Enabling this internet device physically is the first step towards connecting to internet. For example:</p>
+
+    <list>
+      <item>
+        <p></p>
+      </item>
+      <item>
+        <p></p>
+      </item>
+      <item>
+        <p></p>
+      </item>
+    </list>
+
+  </section>
+
+  <section id="use-network-manager">
+    <title>Use <app>Network Manager</app></title>
+
+    <p>The most common devices to access internet are wireless or wired connections. Consult the <app>Desktop Help</app> <link href="">how to connect to a wireless or a wired connection</link>.</p>
+
+    <p>If you are trying to setup a datacard available on a USB powdered dongle or access internet available on a phone through <app>Bluetooth</app>, then these are the general steps to take:</p>
+
+    <steps>
+      <title>Connect to internet using a datacard or a phone acting as a modem:</title>
+      <item>
+        <p></p>
+      </item>
+      <item>
+        <p></p>
+      </item>
+    </steps>
+
+    <steps>
+      <title>Connect to internet through <app>Bluetooth</app> and an internet enabled phone:</title>
+      <item>
+        <p></p>
+      </item>
+      <item>
+        <p></p>
+      </item>
+    </steps>
+  </section>
+
+  <section id="setup-proxy">
+    <title>Setup proxy settings</title>
+
+    <p></p>
+
+  </section>
+</page>

@@ -1,0 +1,112 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="install-devpkgs">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="bugs-bugzilla"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Install development packages</title>
+
+  <p>To compile software on your distribution, you would need compilers and other development libraries. When code that offers certain functionality gets too big to put in a single file, it is separated into a <em>modules</em>. These modules are then offered as separate packages so other software may also utlize them. Sometimes these modules are only required when you are compiling software. These collection of modules are <em>headers</em> and collectively <em>development libraries</em>.</p> 
+
+  <p>A <app>Arch Linux</app> based distribution by default does not install compilers required for software development. However, headers of software are included with the main package itself, unlike other distributions where development libraries are separated into packages with a suffix <em>-devel</em> or <em>-dev</em>.</p>
+
+  <section id="arch-devel">
+    <title>Install base-devel</title>
+
+    <p>To get essential compilers on a <app>Arch Linux</app> based distribution:</p>
+
+    <steps>
+      <item>
+        <p>Type and run <cmd>sudo pacman -S base-devel</cmd></p>
+      </item>
+    </steps>
+
+    <p>You should see similar output:</p>
+
+    <code>
+            sindhu@arch ~ % sudo pacman -S base-devel
+      [sudo] password for sindhu:
+      :: There are 25 members in group base-devel:
+      :: Repository core
+         1) autoconf  2) automake  3) binutils  4) bison  5) fakeroot  
+         6) file  7) findutils  8) flex  9) gawk  10) gcc  11) gettext  
+         12) grep  13) groff  14) gzip  15) libtool  16) m4  17) make  
+         18) pacman  19) patch  20) pkg-config  21) sed  22) sudo  23) texinfo  
+         24) util-linux  25) which
+
+      Enter a selection (default=all):
+      resolving dependencies...
+      looking for inter-conflicts...
+
+      Packages (25): autoconf-2.69-1  automake-1.14-1  binutils-2.24-1  
+      bison-3.0.2-1  fakeroot-1.20-1  file-5.16-1  findutils-4.4.2-5  
+      flex-2.5.37-1  gawk-4.1.0-2  gcc-4.8.2-7  gettext-0.18.3.1-2  
+      grep-2.15-1  groff-1.22.2-5  gzip-1.6-1  libtool-2.4.2-12  
+      m4-1.4.17-1  make-4.0-2  pacman-4.1.2-4  patch-2.7.1-2  
+      pkg-config-0.28-1  sed-4.2.2-3  sudo-1.8.8-1  texinfo-5.2-2  
+      util-linux-2.24-2  which-2.20-6
+
+      Total Installed Size:   154.48 MiB
+      Net Upgrade Size:       0.00 MiB
+    </code>
+
+  </section>
+
+  <section id="arch-gnome-deve-pkgs">
+    <title>Other packages required for dev env</title>
+
+    <p>The following packages must be installed using <app>Pacman</app> prior to setting up the <app>GNOME</app> dev env.</p>
+
+    <list>
+      <item>
+        <p>gnome-common</p>
+      </item>
+      <item>
+        <p>yelp-tools</p>
+      </item>
+      <item>
+        <p>intltool</p>
+      </item>
+      <item>
+        <p>cvs</p>
+      </item>
+      <item>
+        <p>docbook-xsl</p>
+      </item>
+      <item>
+        <p>js185</p>
+      </item>
+      <item>
+        <p>ragel</p>
+      </item>
+      <item>
+        <p>gperf</p>
+      </item>
+      <item>
+        <p>ruby</p>
+      </item>
+      <item>
+        <p>ruby</p>
+      </item>
+      <item>
+        <p>xorg-util-macros</p> 
+      </item>
+      <item>
+        <p>xf86-input-wacom</p>
+      </item>
+    </list>
+  </section>
+
+</page>

@@ -1,0 +1,32 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="jhbuild-troubleshooting">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref=""/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Troubleshooting software compilation</title>
+
+  <p>Errors during a software compilation is an indication of common scenarios such as:</p>
+
+  <list>
+    <item>
+      <p>Incorrect code</p>
+    </item>
+    <item>
+      <p>Incorrect compilation settings</p>
+    </item>
+
+</list>
+</page>

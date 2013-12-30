@@ -1,0 +1,151 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="jhbuild-basics">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="jhbuild-troubleshooting"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Basics of <app>JHBuild</app></title>
+
+  <p>Once you have <link xref="jhbuild-setup">installed and configured <app>JHBuild</app></link> and with a working internet connection, you can now build <app>GNOME</app> modules from source!</p>
+
+  <section id="jhbuild--help">
+    <title>Seek --help!</title>
+
+    <p>Once you have complete <link xref="jhbuild-setup"></link>, you are already familiar with <cmd>jhbuild build </cmd> command. Now there are few other nifty commands that <app>JHBuild</app> provides. Most <app>Gnu/Linux</app> software understand commandline parameters. The basic commandline paramters are <var>--version</var> and <var>--help</var>. For example, <var>jhbuild --help</var> would show:</p>
+
+    <code>
+      Usage: jhbuild [ -f config ] command [ options ... ]
+
+      Build a set of modules from diverse repositories in correct dependency order
+      (such as GNOME).
+
+      Options:
+        -h, --help            Display this help and exit
+        -f CONFIG, --file=CONFIG
+                              use a non default configuration file
+        -m URI, --moduleset=URI
+                              use a non default module set
+        --no-interact         do not prompt for input
+
+      JHBuild commands are:
+        autobuild       Build modules non-interactively and upload results to JhAutobuild
+        bootstrap       Build support tools
+        bot             Control buildbot
+        build           Update and compile all modules (the default)
+        buildone        Update and compile one or more modules
+        checkbranches   Check modules in GNOME Git repository have the correct branch definition
+        checkmodulesets Check if modules in JHBuild have the correct definition
+        clean           Clean all modules
+        cleanone        Clean one or more modules
+        dot             Output a Graphviz dependency graph for one or more modules
+        goalreport      Report GNOME modules status wrt various goals
+        gui             Build targets from a GUI app
+        help            Information about available JHBuild commands
+        info            Display information about one or more modules
+        list            List the modules that would be built
+        make            Compile and install the module for the current directory
+        rdepends        Display reverse-dependencies of a module
+        run             Run a command under the JHBuild environment
+        sanitycheck     Check that required support tools are available
+        shell           Start a shell under the JHBuild environment
+        snapshot        Print out a moduleset for the exact versions that are checked out
+        sysdeps         Check and install tarball dependencies using system packages
+        tinderbox       Build modules non-interactively and store build logs
+        twoninetynine   Report GNOME modules status wrt 3.0 goals
+        uninstall       Uninstall all modules
+        update          Update all modules from version control
+        updateone       Update one or more modules from version control
+    </code>
+
+    <p>Of these, the following are the commands you would require in your routine software development work:</p>
+
+    <terms>
+      <item>
+        <title><cmd>jhbuild run</cmd></title>
+        <p>Runs the binary of the module compiled. For example, <cmd>jhbuild run epiphany</cmd> would run jhbuild compiled version of <app>Epiphany</app> from <var>/opt/gnome/bin/epiphany</var>.</p>
+      </item>
+      <item>
+        <title><cmd>jhbuild shell</cmd></title>
+        <p>This makes available special environment variables of <app>JHBuild</app>, unavailable otherwise in your regular terminal application.</p>
+      </item>
+      <item>
+        <title><cmd>jhbuild make </cmd></title>
+        <p>Issue this command when you are in a git repository directory that can be compiled using <app>JHbuild</app>. For example:</p>
+        <code>
+          sindhu@arch ~ % cd code/gnome/geary 
+          sindhu@arch ~/code/gnome/geary (git)-[master] % jhbuild make
+          *** Configuring geary *** [1/1]
+        </code>
+      </item>
+      <item>
+        <title><cmd>jhbuild cleanone</cmd></title>
+        <p>This command is an equivalent of doing <cmd>git clean -xdf</cmd>. This command deletes temporary and object files created during compilation.</p>
+      </item>
+      <item>
+        <title><cmd>jhbuild buildone</cmd></title>
+        <p>Use this command to build a single module without building any of it's dependent modules. This is useful when you want to just build a particular module possibly after making changes to the source code.</p>
+      </item>
+      <item>
+        <title><cmd>jhbuild uninstall</cmd></title>
+        <p>Use this command to uninstall or remove a module.</p>
+      </item>
+    </terms>
+
+  </section>
+
+  <section id="jhbuild-build-gtk+">
+    <title>Build your first <app>GNOME</app> module!</title>
+
+    <p><app>Gtk+</app> is the library that powers the graphical widgets you see in <app>GNOME</app>. Although this is no rule, however, building <app>Gtk+</app> would be the best first module to test your setup <app>JHBuild</app> as the library is the most common requisite across <app>GNOME</app> modules.</p>
+
+    <steps>
+      <item>
+        <p>Type and run <cmd>jhbuild list gtk+</cmd> to know all the dependent modules that will be compiled along with <app>GTK+</app> module. You should see similar output:</p>
+        <code>
+          sindhu@arch ~ % jhbuild list gtk+
+            itstool
+            yelp-xsl
+            yelp-tools
+            gtk-doc
+            glib
+            fontconfig
+            gobject-introspection
+            gnome-common
+            atk
+            gsettings-desktop-schemas
+            p11-kit
+            glib-networking
+            libsoup
+            polkit
+            udisks
+            gvfs
+            harfbuzz
+            pango
+            gdk-pixbuf
+            at-spi2-core
+            at-spi2-atk
+            libxkbcommon
+            gtk+
+        </code>
+      </item>
+      <item>
+        <p>Type and run <cmd>jhbuild build gkt+</cmd></p>
+      </item>
+    </steps>
+
+    <p>The compilation should take time depending on the speed of your computer processor. If any additional packages are missing or compilation fails for any module, <app>JHBuild</app> will halt and present you a menu with options for manual intervention.</p>
+  </section>
+
+</page>

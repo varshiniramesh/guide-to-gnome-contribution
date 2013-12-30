@@ -1,0 +1,41 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="guide"
+      id="source-binary">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="cmd-basics"/>
+
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+  </info>
+
+    <title>Source and Binary</title>
+
+    <p>There are two stages of existence to most software - source or binary.</p>
+
+    <p>Source refers to files and directories that contain the code that constitute the software. To use a software, it would have to be <em>compiled</em> using a <app>compiler</app>. The compiler would create a binary. This binary has code that makes the program runnable by a computer, that is to say, the binary thus produced is a form of executable code.</p>
+
+    <p>An example of a source file: <link href="https://git.gnome.org/browse/epiphany/tree/src/ephy-window.c">ephy-window.c</link>. This is one of the source files of the <app>Epiphany</app> project. This is one of the files that makes possible the <app>Web</app> binary. The binary is located at <var>/usr/bin/epiphany</var>.</p>
+
+    <note style="tip">
+      <p>To check where a binary placed in your distribution, in a terminal, type and run <cmd>which </cmd> followed by the name of the binary. For example: <cmd>which epiphany</cmd>.</p>
+    </note>
+
+    <section id="git-source">
+      <title><app>Git</app> makes source code available</title>
+
+      <p>FOSS is a collaborative effort and thus a change tracking software such as <app>Git</app> will help place all source code of a software that is being worked on collaboratively in a central repository that collaborators can receive and send changes to. Changes to the software are called <em>Commits</em>. Commits show precisely what change occured in the software and who made it, at what time and other meta data associated with it.</p>
+
+      <note style="tip">
+        <p>To see a commit log of a project, visit <link href="http://git.gnome.org">git.gnome.org/</link> followed by the name of the project. For example: <link href="http://git.gnome.org/epiphany/log/">git.gnome.org/epiphany/log/</link>.</p>
+      </note>
+
+    </section>
+
+</page>

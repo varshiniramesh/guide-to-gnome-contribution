@@ -1,0 +1,87 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="task"
+      id="install-linux">
+
+  <info>
+    <revision version="0.1" date="2013-10-09" status="draft"/>
+    <link type="next" xref="use-gnome"/>
+    <credit type="author copyright">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+      <years>2013</years>
+    </credit>
+
+    <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+  </info>
+
+  <title>Install <app>GNU/Linux</app> operating system</title>
+
+  <p>Once, you have downloaded a <link xref="download-linux">recommended distribution</link>, <link xref="prepare-space#download-write-disk_image">write the distribution's disk image to a flash drive</link>, restart your computer to run the flash drive. The distribution written on to the flash drive should now start with your computer.</p>
+
+  <note style="important">
+    <p>To have more than one operating systems on Apple computers, you will require installation of a program called <app>ReFit</app>. For installation instructions,c please consult <link href="http://refit.sourceforge.net/">ReFit</link> webpage.</p>
+  </note>
+
+  <p>The following is a screencast that shows installation of Arch Linux based distribution -- <app>Bridge Linux</app>.</p>
+
+    <media type="video" src="screencasts/bridge_linux-installation.ogv" width="650px" height="500px"/>
+
+  <p>The steps are of each screen are summarised as below:</p>
+  <steps>
+    <item>
+      <p>Move your mouse pointer on <gui>Activities</gui>, from the launcher, click <app>Files</app>.</p>
+    </item>
+    <item>
+      <p>Click on the <gui>Desktop</gui> directory, double click on <app>Install Bridge Linux</app>.</p>
+    </item>
+    <item>
+      <note style="tip">
+        <p>To navigate in the installation program, use <key>◂</key> (left arrow), <key>▸</key> (right arrow), <key>▴</key> (top arrow) and <key>▾</key> (bottom arrow) keys on your keyboard. Use <key>Tab</key> to cycle through options on screen. Your selection of a choice is highlighted by blue background around the choice. To select an option, use <key>Enter ↲</key>.</p>
+      </note>
+      <p>Select your preferred language of choice. In the screencast, English language was chosen.</p>
+    </item>
+    <item>
+      <note>
+        <p>To quickly select an option from a long list, press the first letter of the option you wish to select. For example, if you were to choose the city Kolkota from a list, pressing <key>K</key> will make the cursor jump and highlight the first city starting with the letter K. From there on, use arrow keys to navigate to your choice.</p>
+      </note>
+      <p>Set date and time to your preferred timezone. In the screencast, the choice for continent is Asia, choice for country is India and city is Kolkota which will set the timezone to +5:30.</p>
+    </item>
+    <item>
+      <p>From the <gui>Disk Preperation</gui> screen, select the disk you wish to use for the installation. This is the storage device that you have paritioned using <app>gParted</app>. If you have more than one storage device, then you will see the devices as a list. For example: In the screencase, we have one storage with the name <em>sda</em>. If one has multiple storage devices, you will see <em>/dev/sdb</em>, <em>dev/sdc</em> and so on.</p>
+    </item>
+    <item>
+      <p>Even though most <app>Arch Linux</app> based distributions provide a paritioning tool within the installation program, it is recommended to use <app>gParted</app> to parition the storage device. Hence the partioning tool within the installation program can be skipped by selecting <gui>Quit</gui>.</p>
+    </item>
+    <item>
+      <p>Select <gui>DONE</gui> to proceed and set root and swap paritions. The recommended filesystem type for a <app>Gnu/Linux</app> installation is <app>ext4</app>. Select <gui>Yes</gui> when asked if to format the set partition.</p>
+    </item>
+    <item>
+      <p>To set a home partition, select the partion you wish to set as home when asked <em>Do you want to mount other static partitions at bootup?</em>. Type <em>/home</em> as the mount point.</p>
+      <note style="warning">
+        <p>If you have an existing home parition that you would like to reuse, after you set it to mount as <em>/home</em>, make sure you select <gui>No</gui> when asked if to format the parition.</p>
+      </note>
+      <p>Select <gui>Main Menu</gui> to proceed.</p>
+    </item>
+    <item>
+      <p>Select <gui>Install system</gui> to install <app>Bridge Linux</app>.</p>
+    </item>
+    <item>
+      <p>Once the installation has completed, select <gui>Continue</gui> to <gui>Configure system</gui>. Here, set the <gui>Root Password</gui> and your <gui>Username</gui> in the system. Select <gui>Back</gui> to proceed.</p>
+    </item>
+    <item>
+      <note>
+        <p>Bootloader is a software that presents a menu that appears on your screen as your computer starts up. The menu lets you select between one or more installed operating systems. Popular bootloaders are <app>GRUB</app>, <app>Syslinux</app>.</p>
+      </note>
+      <p>Select <gui>Install bootloader</gui> to install <app>GRUB</app> bootloader.</p>
+      <note style="tip">
+        <p>In a computer with more than one operating system installed, <app>GRUB</app> automatically detects other available operating systems and adds it to the <app>GRUB</app> menu. For example: If you have <app>Windows</app> installed on your computer, you will be able to access it from the <app>GRUB</app> menu when your computer starts up.</p>
+      </note>
+      <p>Select <gui>Quit</gui> to exit the installation program. Restart your computer and remove the flash drive.</p>
+    </item>
+    <item>
+       <p>You will now be presented with the <app>GRUB</app> menu, select <app>Bridge Linux</app> from the menu to start your new <app>Gnu/Linux</app> distribtion!</p>
+    </item>
+  </steps>
+
+</page>

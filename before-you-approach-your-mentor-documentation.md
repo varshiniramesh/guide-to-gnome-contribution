@@ -26,7 +26,7 @@ If yes, then these are the small essential pre-requisites you will need to posse
 We write documentation to address these issues:
 
 1. No user help for help for a particular software or part of the software exists at all. 
-1. To improve existing documentation. When any inconsistency is noticed in the existing user help, we report it and then write the correct the user help.
+1. To improve existing documentation. When any inconsistency is noticed in the existing user help, we report it and then write the correct user help.
 
 ## What do I need on my computer to write documentation?
 

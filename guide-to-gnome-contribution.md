@@ -12,7 +12,7 @@ This page discusses the big picture - all that you need to know right from takin
 
 Please note this guide assumes you have [Ubuntu GNOME](http://ubuntugnome.org/) installed on your computer. This distribution is easy to set up, manage and is quite popular among computer literate masses. Installation procedure itself is not covered under this guide as it can make the guide that much longer to read.
 
-While all commands mentioned in this guide should work on most other Gnu/Linux distributions as well, however you _may_ encounter issues specific to that particular distribution. Predicting all of them are of course, impossible and beyong the scope of this document. However, I can point you to the general direction - to resolve issues, you might want to seek help in communication mediums (such as mailing lists, forums, Question and Answer websites) meant for that distribution. For example, you are reading this guide but using Fedora _and_ have an issue, try approaching [Fedora Forum](http://www.fedoraforum.org/). Similarly for other distributions.
+While all commands mentioned in this guide should work on most other Gnu/Linux distributions as well, however you _may_ encounter issues specific to that particular distribution. Predicting all of them are of course, impossible and beyond the scope of this document. However, I can point you to the general direction - to resolve issues, you might want to seek help in communication mediums (such as mailing lists, forums, Question and Answer websites) meant for that distribution. For example, you are reading this guide but using Fedora _and_ have an issue, try approaching [Fedora Forum](http://www.fedoraforum.org/). Similarly for other distributions.
 
 1. Do you know what a terminal is? Do you know the meaning of "execute"?
 1. Are you familiar with the terms 'binaries/executables'?
@@ -43,11 +43,11 @@ To see document with images: [http://sindhus.bitbucket.org/guide-to-gnome-contri
 
 These are the terms used in this document along with it's equivalents used interchangably.
 
-| Term                     | May also be referred to as:    |
-|:-------------------------|:-------------------------------|
-| Program                  | Application, Executale, Binary |
-| Software                 | Project, Module, Product       |
-| Graphical User Interface | User Interface (UI)            |
+| Term                     | May also be referred to as:     |
+|:-------------------------|:--------------------------------|
+| Program                  | Application, Executable, Binary |
+| Software                 | Project, Module, Product        |
+| Graphical User Interface | User Interface (UI)             |
 
 ## How to start contributing to GNOME? ##
 
@@ -71,7 +71,7 @@ When you use GNOME for your daily computing needs such as looking up a definitio
 
 [Dictionary](https://wiki.gnome.org/Dictionary), [Rhythmbox](https://wiki.gnome.org/Rhythmbox), [Tomboy](https://wiki.gnome.org/Apps/Tomboy), [Bijiben](https://wiki.gnome.org/Apps/Bijiben) and [Gnote](https://wiki.gnome.org/Gnote) are examples of some GNOME applications.
 
-__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on) and also Ecllipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
+__Note__: Certain applications although installable in GNOME, are _not_ managed by GNOME. For example: applications that are a part of another desktop environment, such as KDE (Krita, Kate and so on) and also Eclipse, Codeblocks and so on. These are independent projects that have their separate community. Their development process and procedures are independent of GNOME.
 
 __Where will I find bugs?__
 
@@ -183,7 +183,7 @@ sindhus' which is my username, the address will have your username.
 
 __Git commands Vs Terminal commands__
 
-Here is the differennce between Git commands and terminal commands:
+Here is the difference between Git commands and terminal commands:
 
 * Terminal commands are used simply to navigate between directories on a Gnu/Linux distribution. You can use them in the terminal regardless of whether you have Git installed on your computer or not.
 * Git commands are to tell git what to do with changes made to files in a particular directory. You can only use git commands within a directory that is a git repository. To know if the directory is a git repository or not, check with `ls .git`. If you see an output like this:
@@ -297,18 +297,18 @@ sindhus@leh:~/checkout/gnome/gnome-dictionary/help/C$ git format-patch HEAD~1
 0001-Added-definition-for-strategies.patch
 ```
 
-Congragulations! Your first patch is ready to be uploaded on to bugzilla!
+Congratulations! Your first patch is ready to be uploaded on to bugzilla!
 
 In the above git command, 1 indicates that git must generate the patch file for the recent most first commit. If you typed `git form-patch HEAD~2`, you would get patch files for top most (recent) plus another commit after it. To generate patches in different ways, such as combining changes of 2 commits in one patch file, execute `man git format-patch` in Terminal to go through the manual page for `git format-patch`.
 
 __How do I submit this patch file?__
 
 1. Open the bug page for whom you have the above changes in your web browser.
-1. At the bottom of the page, click "Add an attachement", this will take you to a page where you can _attach_ (that is, upload) your patch file to the bug page.
+1. At the bottom of the page, click "Add an attachment", this will take you to a page where you can _attach_ (that is, upload) your patch file to the bug page.
 
 __Where can I learn more about Git?__
 
-You will be able to appreciate how git was developed, learn the advanced features it provides, accquire deeper understanding of how git works by reading these popular books and resources:
+You will be able to appreciate how git was developed, learn the advanced features it provides, aquire deeper understanding of how git works by reading these popular books and resources:
 
  * [Git-scm book](http://git-scm.com/book)
  * [Wikipedia page for Git](http://en.wikipedia.org/wiki/Git_(software))
@@ -319,9 +319,9 @@ After you upload the patch on to a bug page. You will see a notification like th
 
 <a href="/static/images/bug-notification.png"><img src="/static/images/bug-notification.png" style="width:500px"></a>
 
-These are the users who are interested in bugs and patches being uploaded to that particular project. They will receive an e-mail that you have uploaded a patch on to the bug page. Among these people, will be developers, maintaners and experienced contributors. This means, they will now be interested in reviewing your patch. The review can be from anyone experienced in the project.
+These are the users who are interested in bugs and patches being uploaded to that particular project. They will receive an e-mail that you have uploaded a patch on to the bug page. Among these people, will be developers, maintainers and experienced contributors. This means, they will now be interested in reviewing your patch. The review can be from anyone experienced in the project.
 
-The reviewerer may give you a full review or only review part of the patch indicating what issues you need to resolve first. A few common possible issues with a patch can be (but not limited to):
+The reviewer may give you a full review or only review part of the patch indicating what issues you need to resolve first. A few common possible issues with a patch can be (but not limited to):
 
 1. Patch does not have a good commit message.
 1. Your changes are not complete.
@@ -349,7 +349,7 @@ __Tips__:
 
 __Lather, rinse, repeat!__
 
-Now, you can make your patch again and re-upload it! Wait for the review and repeat the procedure until the reviewer marks your patch with "accepted_commit-now" status. You will receive an e-mail notification about it. This indicates that the patch will be incorporated into the source code located on git.gnome.org. __Congragulations, you have now successfully made your first GNOME contribution!__
+Now, you can make your patch again and re-upload it! Wait for the review and repeat the procedure until the reviewer marks your patch with "accepted_commit-now" status. You will receive an e-mail notification about it. This indicates that the patch will be incorporated into the source code located on git.gnome.org. __Congratulations, you have now successfully made your first GNOME contribution!__
 
 __Testing your patch__
 
@@ -709,7 +709,84 @@ _Docs related mailing lists_:
 
 ## Chat on IRC! ##
 
-TOWRITE!
+IRC (Internet Relay Chat) is a multi-user multi-channel chatting system.A channel is similar to a forum or a group.Channel names begin with # as in #irchelp.
+
+IRC is based on a client-server model. You run a client program on your own computer which connects you to a server computer on the Internet. These servers link to many other servers to make up an IRC network, which transport messages from one user (client) to another. In this manner, people from all over the world can talk to each other live and simultaneously.
+
+To join in the fun, all you need is an Internet Service Provider to get you connected to the Internet (if you’re able to read this web page, you’re already connected), and an IRC client program. The most popular clients are mIRC for the Windows operating system, XChat for UNIX, and Ircle for Macintosh. 
+
+Each user in IRC is known by a NICK (Essentially your username).
+
+Example : GimpNET - IRC network and within is Channel named #gnome-love.
+
+Commands begin with /.
+
+1: /join #gnome-love
+
+You join the channel #gnome-love.
+
+2: /who #gnome-love
+
+Gives some info on users in the channel.
+
+@ = channel op, while * means IRC op.
+
+3: hello everyone
+
+Everyone on #gnome-love sees hello everyone. (You need not type in your own nick.)
+
+4 :/me is a pink bunny
+
+Everyone in #gnome-love sees * yournick is a pink bunny
+
+5: /leave #gnome-love
+
+You leave the channel.
+
+6: /whois Tomm
+
+You get some info about Tomm or whatever nickname you entered.
+
+7: /whois yournick
+
+This is some info others see about you.
+
+8: /nick newnick
+
+Changes your nick to “newnick”
+
+9: /msg Tomm hi there.
+
+Only Tomm sees your message (you don’t need to be on the same channel for this to work).
+
+10: /ping #gnome-love
+
+Gives information on the delay (round-trip) between you and everybody on
+
+gnome-love.
+11: /ping Tomm
+
+Gives information on the delay (round-trip) between you and just Tomm.
+
+12: /dcc chat MaryN
+
+This sends MaryN a request for a dcc chat session. MaryN types /dcc chat yournick to complete the connection. DCC chat is faster (lag free) and more secure than /msg.
+
+13: /msg =MaryN Hi there!
+
+Once a DCC connection has been established, use the /msg =nick message format to exchange messages (note the = sign). DCC does not go through servers, so it are unaffected by server lag, net splits, etc.
+
+14: /help
+
+This works in many clients. Try it!
+
+15: /quit good night!
+
+You quit IRC completely, with the parting comment so that others see “*** Signoff: yournick (good night!)”.
+
+NOTE: When you are not in a named channel, lines not beginning with a / have no effect, and many commands work differently or fail to work altogether.
+
+
 
 ## Make this document better! ##
 
